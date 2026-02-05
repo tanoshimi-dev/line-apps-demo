@@ -1,0 +1,154 @@
+.member-card-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.loading-card,
+.no-member {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.loading-card .loading-spinner {
+  margin: 0 auto 16px;
+}
+
+.digital-card {
+  background: linear-gradient(135deg, var(--line-green), #04a148);
+  border-radius: 16px;
+  padding: 24px;
+  color: white;
+  box-shadow: 0 8px 24px rgba(6, 199, 85, 0.3);
+  margin-bottom: 20px;
+}
+
+.digital-card[data-rank="silver"] {
+  background: linear-gradient(135deg, #6b7280, #9ca3af);
+}
+
+.digital-card[data-rank="gold"] {
+  background: linear-gradient(135deg, #d97706, #fbbf24);
+}
+
+.digital-card[data-rank="platinum"] {
+  background: linear-gradient(135deg, #374151, #6b7280);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+.card-rank {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+
+.card-qr {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.qr-image {
+  width: 160px;
+  height: 160px;
+  background: white;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.qr-loading,
+.qr-placeholder {
+  width: 160px;
+  height: 160px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-loading .loading-spinner {
+  border-top-color: var(--line-green);
+}
+
+.qr-placeholder {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.card-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.card-info .label {
+  display: block;
+  font-size: 11px;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.card-info .value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.member-number .value {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+.card-points {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-points .points-label {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.card-points .points-value {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.card-instructions {
+  padding: 20px;
+}
+
+.card-instructions h3 {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.card-instructions ol {
+  padding-left: 20px;
+}
+
+.card-instructions li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}

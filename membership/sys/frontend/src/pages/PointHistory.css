@@ -1,0 +1,108 @@
+.point-history-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-title {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.loading-state,
+.error-state,
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.loading-state .loading-spinner {
+  margin: 0 auto 16px;
+}
+
+.error-state p,
+.empty-state p {
+  color: var(--text-secondary);
+}
+
+.history-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.history-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.history-type {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.history-type.add {
+  background: rgba(6, 199, 85, 0.1);
+  color: var(--line-green);
+}
+
+.history-type.use {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.history-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.history-reason {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.history-date {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.history-points {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.points-change {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.points-change.add {
+  color: var(--line-green);
+}
+
+.points-change.use {
+  color: #ef4444;
+}
+
+.points-balance {
+  font-size: 11px;
+  color: var(--text-secondary);
+}

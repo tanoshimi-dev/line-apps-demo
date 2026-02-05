@@ -1,0 +1,146 @@
+.profile-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-section {
+  margin-bottom: 16px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-avatar-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--line-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.profile-info h2 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.status-message {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.member-section,
+.register-section,
+.settings-section {
+  margin-bottom: 16px;
+}
+
+.member-section h3,
+.register-section h3,
+.settings-section h3 {
+  font-size: 15px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.loading-state {
+  text-align: center;
+  padding: 20px;
+}
+
+.loading-state .loading-spinner {
+  margin: 0 auto 12px;
+}
+
+.member-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-row dt {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.detail-row dd {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.rank-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.rank-badge[data-rank="bronze"] {
+  background: #cd7f32;
+  color: white;
+}
+
+.rank-badge[data-rank="silver"] {
+  background: #c0c0c0;
+  color: #333;
+}
+
+.rank-badge[data-rank="gold"] {
+  background: linear-gradient(135deg, #ffd700, #ffb300);
+  color: #333;
+}
+
+.rank-badge[data-rank="platinum"] {
+  background: linear-gradient(135deg, #e5e4e2, #a8a8a8);
+  color: #333;
+}
+
+.register-section p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.settings-list {
+  list-style: none;
+}
+
+.settings-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.settings-item:last-child {
+  border-bottom: none;
+}
+
+.settings-button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  font-size: 14px;
+  color: #ef4444;
+  padding: 0;
+}
