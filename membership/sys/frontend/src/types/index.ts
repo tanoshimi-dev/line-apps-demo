@@ -26,3 +26,17 @@ export interface PointHistory {
   reason: string
   createdAt: string
 }
+
+export interface QrSessionValidation {
+  type: 'spend' | 'earn'
+  points: number | null
+  status: string
+}
+
+export interface QrClaimResult {
+  message: string
+  type: 'spend' | 'earn'
+  points: number
+  new_balance: number
+  rank: string
+}

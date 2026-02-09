@@ -2,15 +2,22 @@
 
 namespace Database\Seeders;
 
+use App\Models\AdminUser;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // Add seeders here if needed
+        AdminUser::firstOrCreate(
+            ['username' => 'admin'],
+            [
+                'password' => Hash::make('admin123'),
+                'name' => 'Administrator',
+                'role' => 'admin',
+                'is_active' => true,
+            ]
+        );
     }
 }

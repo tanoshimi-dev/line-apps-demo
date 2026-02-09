@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(git -C \"E:\\\\dev\\\\vs_code\\\\products\\\\line-apps-demo\\\\membership\" log --oneline -10)",
+      "Bash(find:*)"
+    ]
+  }
+}

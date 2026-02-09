@@ -2,13 +2,30 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import { Html5Qrcode } from 'html5-qrcode'
 import { useMember } from '../hooks/useMember'
-import { addPoints, usePoints } from '../services/api'
+import { addPoints, usePoints, validateQrSession, claimQrSession } from '../services/api'
 import Navigation from '../components/Navigation'
 import './QRScanner.css'
 
 type Mode = 'earn' | 'spend'
-type EarnStep = 'intro' | 'scanning' | 'success' | 'error'
+type EarnStep = 'intro' | 'scanning' | 'confirm_session' | 'success' | 'error'
 type SpendStep = 'scanning' | 'input' | 'confirm' | 'success' | 'error'
+
+interface QrSessionData {
+  type: 'spend' | 'earn'
+  token: string
+}
+
+function parseQrSession(text: string): QrSessionData | null {
+  try {
+    const data = JSON.parse(text)
+    if (data && (data.type === 'spend' || data.type === 'earn') && typeof data.token === 'string') {
+      return data as QrSessionData
+    }
+  } catch {
+    // Not JSON, not a session QR
+  }
+  return null
+}
 
 function QRScanner() {
   const [searchParams] = useSearchParams()
@@ -29,6 +46,10 @@ function QRScanner() {
   const [remainingBalance, setRemainingBalance] = useState(0)
   const [errorMessage, setErrorMessage] = useState('')
   const [loading, setLoading] = useState(false)
+
+  // QR session state
+  const [sessionData, setSessionData] = useState<QrSessionData | null>(null)
+  const [sessionPoints, setSessionPoints] = useState<number | null>(null)
 
   // QR Scanner ref
   const scannerRef = useRef<Html5Qrcode | null>(null)
@@ -96,10 +117,61 @@ function QRScanner() {
     await stopScanner()
     setScannedData(decodedText)
 
+    // Check if it's a QR session from admin
+    const session = parseQrSession(decodedText)
+    if (session) {
+      await handleSessionQr(session)
+      return
+    }
+
+    // Legacy flow: plain QR codes
     if (mode === 'earn') {
       await handleEarnPoints(decodedText)
     } else {
       setSpendStep('input')
+    }
+  }
+
+  const handleSessionQr = async (session: QrSessionData) => {
+    setLoading(true)
+    try {
+      const validation = await validateQrSession(session.token)
+      setSessionData(session)
+
+      if (validation.type === 'earn') {
+        setSessionPoints(validation.points)
+        setEarnStep('confirm_session')
+      } else {
+        // spend session: user enters amount
+        setSessionPoints(null)
+        setSpendStep('input')
+      }
+    } catch (err: any) {
+      setErrorMessage(err.message || 'QRコードが無効または期限切れです')
+      if (mode === 'earn') {
+        setEarnStep('error')
+      } else {
+        setSpendStep('error')
+      }
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleConfirmSessionEarn = async () => {
+    if (!sessionData) return
+    setLoading(true)
+    try {
+      const result = await claimQrSession(sessionData.token)
+      setEarnedPoints(result.points)
+      setRemainingBalance(result.new_balance)
+      setEarnStep('success')
+      refetch()
+    } catch (err: any) {
+      setErrorMessage(err.message || 'ポイントの付与に失敗しました')
+      setEarnStep('error')
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -126,13 +198,21 @@ function QRScanner() {
 
     setLoading(true)
     try {
-      const result = await usePoints(amount, `QRスキャン利用: ${scannedData}`)
-      setUsedPoints(amount)
-      setRemainingBalance(result.points)
+      if (sessionData) {
+        // Claim via QR session
+        const result = await claimQrSession(sessionData.token, amount)
+        setUsedPoints(result.points)
+        setRemainingBalance(result.new_balance)
+      } else {
+        // Legacy flow
+        const result = await usePoints(amount, `QRスキャン利用: ${scannedData}`)
+        setUsedPoints(amount)
+        setRemainingBalance(result.points)
+      }
       setSpendStep('success')
       refetch()
-    } catch (err) {
-      setErrorMessage('ポイントの利用に失敗しました。もう一度お試しください。')
+    } catch (err: any) {
+      setErrorMessage(err.message || 'ポイントの利用に失敗しました。もう一度お試しください。')
       setSpendStep('error')
       console.error('Use points error:', err)
     } finally {
@@ -160,6 +240,8 @@ function QRScanner() {
     setScannedData('')
     setPointsInput('')
     setErrorMessage('')
+    setSessionData(null)
+    setSessionPoints(null)
     if (mode === 'earn') {
       setEarnStep('intro')
     } else {
@@ -204,9 +286,29 @@ function QRScanner() {
               {loading && (
                 <div className="scanner-loading-overlay">
                   <div className="loading-spinner" />
-                  <p>ポイントを付与中...</p>
+                  <p>確認中...</p>
                 </div>
               )}
+            </div>
+          )}
+
+          {earnStep === 'confirm_session' && (
+            <div className="scanner-confirm-section">
+              <h2>ポイント獲得の確認</h2>
+              <div className="confirm-detail">
+                <div className="confirm-row">
+                  <span>獲得ポイント</span>
+                  <strong className="confirm-points">{sessionPoints?.toLocaleString()} pt</strong>
+                </div>
+              </div>
+              <div className="result-actions">
+                <button className="btn-primary" onClick={handleConfirmSessionEarn} disabled={loading}>
+                  {loading ? '処理中...' : 'ポイントを受け取る'}
+                </button>
+                <button className="btn-secondary" onClick={handleBack} disabled={loading}>
+                  キャンセル
+                </button>
+              </div>
             </div>
           )}
 

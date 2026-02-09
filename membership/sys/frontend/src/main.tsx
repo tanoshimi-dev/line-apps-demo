@@ -14,11 +14,16 @@ const renderApp = () => {
   )
 }
 
-initializeLiff(liffId)
-  .then(() => {
-    renderApp()
-  })
-  .catch((error) => {
-    console.error('LIFF initialization failed:', error)
-    renderApp()
-  })
+// Skip LIFF initialization for admin routes
+if (window.location.pathname.startsWith('/admin')) {
+  renderApp()
+} else {
+  initializeLiff(liffId)
+    .then(() => {
+      renderApp()
+    })
+    .catch((error) => {
+      console.error('LIFF initialization failed:', error)
+      renderApp()
+    })
+}

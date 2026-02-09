@@ -1,5 +1,5 @@
 import { getAccessToken } from './liff'
-import type { MemberInfo, PointHistory } from '../types'
+import type { MemberInfo, PointHistory, QrSessionValidation, QrClaimResult } from '../types'
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api'
 
@@ -118,4 +118,15 @@ export async function usePoints(points: number, reason: string): Promise<MemberI
 export async function getMemberQRCode(): Promise<{ qrCodeUrl: string }> {
   const response = await fetchWithAuth<{ qr_code: string; member_number: string }>('/member/qrcode')
   return { qrCodeUrl: response.qr_code }
+}
+
+export async function validateQrSession(token: string): Promise<QrSessionValidation> {
+  return fetchWithAuth<QrSessionValidation>(`/qr/validate/${token}`)
+}
+
+export async function claimQrSession(token: string, points?: number): Promise<QrClaimResult> {
+  return fetchWithAuth<QrClaimResult>('/qr/claim', {
+    method: 'POST',
+    body: JSON.stringify({ token, points }),
+  })
 }
