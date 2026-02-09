@@ -1,0 +1,291 @@
+.scanner-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+}
+
+.scanner-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--line-green);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.scanner-header h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.scanner-back-btn {
+  background: none;
+  color: white;
+  font-size: 20px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.scanner-back-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.scanner-content {
+  flex: 1;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px;
+  width: 100%;
+  padding-bottom: 80px;
+}
+
+/* Intro screen */
+.scanner-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--card-background);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.scanner-intro-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.scanner-intro h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.scanner-intro p {
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.scanner-start-btn {
+  max-width: 280px;
+}
+
+/* Camera / viewfinder */
+.scanner-camera-section {
+  position: relative;
+}
+
+.scanner-viewfinder {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.scanner-hint {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.scanner-loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  gap: 12px;
+}
+
+/* Result screen */
+.scanner-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--card-background);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.result-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.result-icon.success {
+  background: var(--line-green);
+  color: white;
+}
+
+.result-icon.error {
+  background: #e74c3c;
+  color: white;
+}
+
+.scanner-result h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.result-points {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.result-points.earned {
+  color: var(--line-green);
+}
+
+.result-points.spent {
+  color: #e74c3c;
+}
+
+.result-balance {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+.result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 280px;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.error-message {
+  color: #e74c3c;
+  margin-bottom: 24px;
+}
+
+/* Point input section */
+.scanner-input-section {
+  background: var(--card-background);
+  border-radius: 12px;
+  padding: 32px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.scanner-input-section h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.available-points {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.points-input-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.points-input {
+  width: 160px;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  border: none;
+  border-bottom: 3px solid var(--line-green);
+  padding: 8px 0;
+  outline: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: inherit;
+}
+
+.points-input::placeholder {
+  color: #ccc;
+}
+
+.points-input-unit {
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+/* Confirm section */
+.scanner-confirm-section {
+  background: var(--card-background);
+  border-radius: 12px;
+  padding: 32px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scanner-confirm-section h2 {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.confirm-detail {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.confirm-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.confirm-row:last-child {
+  border-bottom: none;
+}
+
+.confirm-row span {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.confirm-points {
+  color: #e74c3c;
+  font-size: 18px;
+}

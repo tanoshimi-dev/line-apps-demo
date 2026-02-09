@@ -5,7 +5,8 @@
       "Bash(npm init:*)",
       "Bash(npm install)",
       "Bash(npm run build:*)",
-      "Bash(dir /b \"E:\\\\dev\\\\vs_code\\\\products\\\\line-apps-demo\\\\memberscard\\\\frontend\\\\dist\")"
+      "Bash(dir /b \"E:\\\\dev\\\\vs_code\\\\products\\\\line-apps-demo\\\\memberscard\\\\frontend\\\\dist\")",
+      "Bash(npm install:*)"
     ]
   }
 }

@@ -43,16 +43,34 @@ function Home() {
           {memberLoading ? (
             <p>会員情報を読み込み中...</p>
           ) : member ? (
-            <div className="member-summary">
-              <div className="points-display">
-                <span className="points-label">ポイント</span>
-                <span className="points-value">{member.points.toLocaleString()}</span>
-                <span className="points-unit">pt</span>
+            <>
+              <div className="member-summary">
+                <div className="points-display">
+                  <span className="points-label">ポイント</span>
+                  <span className="points-value">{member.points.toLocaleString()}</span>
+                  <span className="points-unit">pt</span>
+                </div>
+                <div className="rank-badge" data-rank={member.rank}>
+                  {member.rank.toUpperCase()}
+                </div>
               </div>
-              <div className="rank-badge" data-rank={member.rank}>
-                {member.rank.toUpperCase()}
+              <div className="action-buttons">
+                <button
+                  className="action-btn earn-btn"
+                  onClick={() => navigate('/scan?mode=earn')}
+                >
+                  <span className="action-btn-icon">📷</span>
+                  <span className="action-btn-label">ポイントを貯める</span>
+                </button>
+                <button
+                  className="action-btn spend-btn"
+                  onClick={() => navigate('/scan?mode=spend')}
+                >
+                  <span className="action-btn-icon">💰</span>
+                  <span className="action-btn-label">ポイントを使う</span>
+                </button>
               </div>
-            </div>
+            </>
           ) : (
             <div className="register-prompt">
               <p>まだ会員登録がお済みでありません</p>

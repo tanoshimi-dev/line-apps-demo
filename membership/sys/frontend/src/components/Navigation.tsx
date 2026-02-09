@@ -10,9 +10,15 @@ interface NavItem {
 const navItems: NavItem[] = [
   { path: '/', label: 'ホーム', icon: '🏠' },
   { path: '/card', label: '会員証', icon: '💳' },
+  { path: '/scan?mode=earn', label: 'スキャン', icon: '📷' },
   { path: '/points', label: '履歴', icon: '📊' },
   { path: '/profile', label: 'マイページ', icon: '👤' },
 ]
+
+function isActive(itemPath: string, currentPath: string): boolean {
+  const itemPathname = itemPath.split('?')[0]
+  return currentPath === itemPathname
+}
 
 function Navigation() {
   const location = useLocation()
@@ -23,7 +29,7 @@ function Navigation() {
       {navItems.map((item) => (
         <button
           key={item.path}
-          className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
+          className={`nav-item ${isActive(item.path, location.pathname) ? 'active' : ''}`}
           onClick={() => navigate(item.path)}
         >
           <span className="nav-icon">{item.icon}</span>
