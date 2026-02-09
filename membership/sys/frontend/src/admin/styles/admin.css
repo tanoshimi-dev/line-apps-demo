@@ -621,6 +621,116 @@
   max-width: 400px;
 }
 
+/* 2FA */
+.admin-2fa-section {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.admin-2fa-section h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.admin-2fa-description {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.admin-2fa-qr {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.admin-2fa-qr img {
+  border: 4px solid #f0f0f0;
+  border-radius: 8px;
+}
+
+.admin-2fa-secret {
+  background: #f8f9fa;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.admin-2fa-secret-label {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.admin-2fa-secret-value {
+  font-family: monospace;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #333;
+  word-break: break-all;
+}
+
+.admin-2fa-code-input {
+  font-family: monospace;
+  font-size: 20px;
+  letter-spacing: 6px;
+  text-align: center;
+  max-width: 200px;
+}
+
+.admin-2fa-recovery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin: 16px 0;
+  max-width: 400px;
+}
+
+.admin-2fa-recovery-code {
+  font-family: monospace;
+  font-size: 14px;
+  background: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+.admin-2fa-warning {
+  background: #fff3e0;
+  color: #e65100;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.admin-2fa-status-enabled {
+  color: #2e7d32;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.admin-2fa-status-disabled {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.admin-2fa-back {
+  margin-top: 16px;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
 /* Loading */
 .admin-loading {
   display: flex;

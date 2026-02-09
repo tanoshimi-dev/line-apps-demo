@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import type { Operator } from '../types'
 import { getOperators, createOperator, updateOperator, deleteOperator } from '../services/adminApi'
+import TwoFactorSetup from '../components/TwoFactorSetup'
 
 export default function AdminSettings() {
   const [operators, setOperators] = useState<Operator[]>([])
@@ -63,6 +64,10 @@ export default function AdminSettings() {
   return (
     <div className="admin-page">
       <h2>設定</h2>
+
+      <div className="admin-section">
+        <TwoFactorSetup />
+      </div>
 
       <div className="admin-section">
         <div className="admin-section-header">

@@ -3,12 +3,24 @@ export interface AdminUser {
   username: string
   name: string
   role: 'admin' | 'operator'
+  two_factor_enabled?: boolean
 }
 
 export interface AdminLoginResponse {
   token: string
   expires_at: string
   user: AdminUser
+  two_factor_required?: boolean
+}
+
+export interface TwoFactorSetupResponse {
+  secret: string
+  otpauth_uri: string
+}
+
+export interface TwoFactorConfirmResponse {
+  message: string
+  recovery_codes: string[]
 }
 
 export interface DashboardStats {

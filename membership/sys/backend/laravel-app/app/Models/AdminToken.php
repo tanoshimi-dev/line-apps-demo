@@ -15,10 +15,12 @@ class AdminToken extends Model
         'admin_user_id',
         'token',
         'expires_at',
+        'two_factor_confirmed',
     ];
 
     protected $casts = [
         'expires_at' => 'datetime',
+        'two_factor_confirmed' => 'boolean',
     ];
 
     public function adminUser(): BelongsTo

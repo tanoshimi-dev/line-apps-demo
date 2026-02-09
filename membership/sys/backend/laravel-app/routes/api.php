@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AdminMemberController;
 use App\Http\Controllers\Admin\AdminTransactionController;
 use App\Http\Controllers\Admin\AdminQrController;
 use App\Http\Controllers\Admin\AdminSettingsController;
+use App\Http\Controllers\Admin\AdminTwoFactorController;
 use App\Http\Middleware\AdminAuthMiddleware;
 use App\Http\Middleware\AdminRoleMiddleware;
 use App\Http\Middleware\LineAuthMiddleware;
@@ -34,12 +35,19 @@ Route::middleware([LineAuthMiddleware::class, 'throttle:api'])->group(function (
 // Admin login (strict rate limit: 5/min per IP)
 Route::middleware(['throttle:admin-login'])->group(function () {
     Route::post('/admin/login', [AdminAuthController::class, 'login']);
+    Route::post('/admin/2fa/verify', [AdminAuthController::class, 'verifyTwoFactor']);
 });
 
 // Admin endpoints (admin auth required)
 Route::middleware([AdminAuthMiddleware::class, 'throttle:api'])->prefix('admin')->group(function () {
     Route::post('/logout', [AdminAuthController::class, 'logout']);
     Route::get('/me', [AdminAuthController::class, 'me']);
+
+    // 2FA management
+    Route::get('/2fa/setup', [AdminTwoFactorController::class, 'setup']);
+    Route::post('/2fa/confirm', [AdminTwoFactorController::class, 'confirm']);
+    Route::delete('/2fa', [AdminTwoFactorController::class, 'destroy']);
+    Route::get('/2fa/status', [AdminTwoFactorController::class, 'status']);
 
     Route::get('/dashboard', [AdminDashboardController::class, 'index']);
 

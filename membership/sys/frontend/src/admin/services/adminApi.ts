@@ -10,6 +10,8 @@ import type {
   QrSessionListItem,
   Operator,
   PaginatedResponse,
+  TwoFactorSetupResponse,
+  TwoFactorConfirmResponse,
 } from '../types'
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api'
@@ -58,9 +60,32 @@ export async function adminLogin(username: string, password: string): Promise<Ad
     method: 'POST',
     body: JSON.stringify({ username, password }),
   })
-  localStorage.setItem('admin_token', response.token)
-  localStorage.setItem('admin_user', JSON.stringify(response.user))
+  if (!response.two_factor_required) {
+    localStorage.setItem('admin_token', response.token)
+    localStorage.setItem('admin_user', JSON.stringify(response.user))
+  }
   return response
+}
+
+export async function adminVerify2fa(token: string, code: string): Promise<AdminLoginResponse> {
+  const response = await fetch(`${API_BASE_URL}/admin/2fa/verify`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    },
+    body: JSON.stringify({ code }),
+  })
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}))
+    throw new Error(errorData.message || `API Error: ${response.status}`)
+  }
+
+  const data: AdminLoginResponse = await response.json()
+  localStorage.setItem('admin_token', data.token)
+  localStorage.setItem('admin_user', JSON.stringify(data.user))
+  return data
 }
 
 export async function adminLogout(): Promise<void> {
@@ -191,4 +216,27 @@ export async function updateOperator(id: string, data: Record<string, unknown>):
 
 export async function deleteOperator(id: string): Promise<void> {
   await adminFetch(`/admin/operators/${id}`, { method: 'DELETE' })
+}
+
+// 2FA
+export async function setup2fa(): Promise<TwoFactorSetupResponse> {
+  return adminFetch<TwoFactorSetupResponse>('/admin/2fa/setup')
+}
+
+export async function confirm2fa(code: string): Promise<TwoFactorConfirmResponse> {
+  return adminFetch<TwoFactorConfirmResponse>('/admin/2fa/confirm', {
+    method: 'POST',
+    body: JSON.stringify({ code }),
+  })
+}
+
+export async function disable2fa(password: string): Promise<void> {
+  await adminFetch('/admin/2fa', {
+    method: 'DELETE',
+    body: JSON.stringify({ password }),
+  })
+}
+
+export async function get2faStatus(): Promise<{ two_factor_enabled: boolean }> {
+  return adminFetch<{ two_factor_enabled: boolean }>('/admin/2fa/status')
 }

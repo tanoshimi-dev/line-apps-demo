@@ -7,7 +7,8 @@
       "WebFetch(domain:membership.omise.app)",
       "Bash(npm install:*)",
       "Bash(npx tsc:*)",
-      "Bash(npx vite build)"
+      "Bash(npx vite build)",
+      "Bash(composer require:*)"
     ]
   }
 }

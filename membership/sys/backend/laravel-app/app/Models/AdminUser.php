@@ -17,14 +17,22 @@ class AdminUser extends Model
         'name',
         'role',
         'is_active',
+        'two_factor_secret',
+        'two_factor_recovery_codes',
+        'two_factor_enabled',
     ];
 
     protected $hidden = [
         'password',
+        'two_factor_secret',
+        'two_factor_recovery_codes',
     ];
 
     protected $casts = [
         'is_active' => 'boolean',
+        'two_factor_enabled' => 'boolean',
+        'two_factor_secret' => 'encrypted',
+        'two_factor_recovery_codes' => 'encrypted',
     ];
 
     public function tokens(): HasMany

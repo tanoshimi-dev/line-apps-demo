@@ -41,6 +41,13 @@ class AdminAuthMiddleware
             ], 401);
         }
 
+        if (!$adminToken->two_factor_confirmed) {
+            return response()->json([
+                'error' => 'Unauthorized',
+                'message' => 'Two-factor authentication required',
+            ], 401);
+        }
+
         $adminUser = $adminToken->adminUser;
 
         if (!$adminUser || !$adminUser->is_active) {

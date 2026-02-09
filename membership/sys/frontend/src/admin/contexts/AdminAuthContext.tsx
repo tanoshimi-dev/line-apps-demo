@@ -1,20 +1,22 @@
 import { createContext, useState, useEffect, useCallback, type ReactNode } from 'react'
-import type { AdminUser } from '../types'
-import { adminLogin, adminLogout, getAdminMe } from '../services/adminApi'
+import type { AdminUser, AdminLoginResponse } from '../types'
+import { adminLogin, adminLogout, adminVerify2fa, getAdminMe } from '../services/adminApi'
 
 interface AdminAuthContextType {
   user: AdminUser | null
   loading: boolean
-  login: (username: string, password: string) => Promise<void>
+  login: (username: string, password: string) => Promise<AdminLoginResponse>
   logout: () => Promise<void>
+  verifyTwoFactor: (token: string, code: string) => Promise<void>
   isAuthenticated: boolean
 }
 
 export const AdminAuthContext = createContext<AdminAuthContextType>({
   user: null,
   loading: true,
-  login: async () => {},
+  login: async () => ({ token: '', expires_at: '', user: { id: '', username: '', name: '', role: 'operator' } }),
   logout: async () => {},
+  verifyTwoFactor: async () => {},
   isAuthenticated: false,
 })
 
@@ -37,8 +39,16 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
     }
   }, [])
 
-  const login = useCallback(async (username: string, password: string) => {
+  const login = useCallback(async (username: string, password: string): Promise<AdminLoginResponse> => {
     const response = await adminLogin(username, password)
+    if (!response.two_factor_required) {
+      setUser(response.user)
+    }
+    return response
+  }, [])
+
+  const verifyTwoFactor = useCallback(async (token: string, code: string) => {
+    const response = await adminVerify2fa(token, code)
     setUser(response.user)
   }, [])
 
@@ -53,6 +63,7 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
       loading,
       login,
       logout,
+      verifyTwoFactor,
       isAuthenticated: !!user,
     }}>
       {children}
