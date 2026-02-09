@@ -24,15 +24,13 @@ class AdminQrController extends Controller
             'expires_at' => now()->addMinutes(10),
         ]);
 
+        $qrData = json_encode(['type' => 'spend', 'token' => $session->token]);
+
         return response()->json([
             'id' => $session->id,
             'type' => $session->type,
-            'token' => $session->token,
             'status' => $session->status,
-            'qr_data' => json_encode([
-                'type' => 'spend',
-                'token' => $session->token,
-            ]),
+            'qr_data' => $qrData,
             'expires_at' => $session->expires_at->toIso8601String(),
         ]);
     }
@@ -63,16 +61,14 @@ class AdminQrController extends Controller
             'expires_at' => now()->addMinutes(10),
         ]);
 
+        $qrData = json_encode(['type' => 'earn', 'token' => $session->token]);
+
         return response()->json([
             'id' => $session->id,
             'type' => $session->type,
             'points' => $session->points,
-            'token' => $session->token,
             'status' => $session->status,
-            'qr_data' => json_encode([
-                'type' => 'earn',
-                'token' => $session->token,
-            ]),
+            'qr_data' => $qrData,
             'expires_at' => $session->expires_at->toIso8601String(),
         ]);
     }
@@ -137,7 +133,6 @@ class AdminQrController extends Controller
             'id' => $session->id,
             'type' => $session->type,
             'points' => $session->points,
-            'token' => $session->token,
             'status' => $session->status,
             'member_name' => $session->member?->display_name,
             'member_number' => $session->member?->member_number,

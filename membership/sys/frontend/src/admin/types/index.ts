@@ -68,7 +68,6 @@ export interface QrSessionResponse {
   id: string
   type: 'spend' | 'earn'
   points: number | null
-  token: string
   status: 'pending' | 'completed' | 'expired'
   qr_data: string
   expires_at: string

@@ -6,11 +6,27 @@ use App\Http\Controllers\Controller;
 use App\Models\PointHistory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class AdminTransactionController extends Controller
 {
     public function index(Request $request): JsonResponse
     {
+        $validator = Validator::make($request->all(), [
+            'type' => 'sometimes|in:add,use',
+            'member_id' => 'sometimes|uuid',
+            'date_from' => 'sometimes|date_format:Y-m-d',
+            'date_to' => 'sometimes|date_format:Y-m-d',
+            'per_page' => 'sometimes|integer|min:1|max:100',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'error' => 'Validation failed',
+                'messages' => $validator->errors(),
+            ], 422);
+        }
+
         $query = PointHistory::with('member');
 
         if ($type = $request->input('type')) {
@@ -22,11 +38,11 @@ class AdminTransactionController extends Controller
         }
 
         if ($dateFrom = $request->input('date_from')) {
-            $query->where('created_at', '>=', $dateFrom);
+            $query->whereDate('created_at', '>=', $dateFrom);
         }
 
         if ($dateTo = $request->input('date_to')) {
-            $query->where('created_at', '<=', $dateTo . ' 23:59:59');
+            $query->whereDate('created_at', '<=', $dateTo);
         }
 
         $query->orderBy('created_at', 'desc');

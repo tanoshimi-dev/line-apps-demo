@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import QRCode from 'qrcode'
 import type { QrSessionResponse, QrSessionDetail } from '../types'
 import { createSpendQr, getQrSessionDetail } from '../services/adminApi'
 
@@ -7,15 +8,19 @@ export default function AdminQrSpend() {
   const [sessionDetail, setSessionDetail] = useState<QrSessionDetail | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [qrImageUrl, setQrImageUrl] = useState('')
   const pollingRef = useRef<number | null>(null)
 
   const handleCreate = async () => {
     setError('')
     setLoading(true)
     setSessionDetail(null)
+    setQrImageUrl('')
     try {
       const result = await createSpendQr()
       setSession(result)
+      const url = await QRCode.toDataURL(result.qr_data, { width: 300, margin: 1 })
+      setQrImageUrl(url)
       startPolling(result.id)
     } catch (err) {
       setError('QRセッションの作成に失敗しました')
@@ -49,6 +54,7 @@ export default function AdminQrSpend() {
     if (pollingRef.current) clearInterval(pollingRef.current)
     setSession(null)
     setSessionDetail(null)
+    setQrImageUrl('')
     setError('')
   }
 
@@ -75,12 +81,14 @@ export default function AdminQrSpend() {
       ) : (
         <div className="admin-qr-display">
           <div className="admin-qr-code">
-            <img
-              src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(session.qr_data)}`}
-              alt="QR Code"
-              width={300}
-              height={300}
-            />
+            {qrImageUrl && (
+              <img
+                src={qrImageUrl}
+                alt="QR Code"
+                width={300}
+                height={300}
+              />
+            )}
           </div>
 
           <div className="admin-qr-status">

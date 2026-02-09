@@ -49,7 +49,7 @@ class AdminSettingsController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'username' => 'required|string|min:3|max:50|unique:admin_users,username',
-            'password' => 'required|string|min:6|max:100',
+            'password' => 'required|string|min:8|max:100|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
             'name' => 'required|string|max:100',
             'role' => 'required|in:admin,operator',
         ]);
@@ -92,7 +92,7 @@ class AdminSettingsController extends Controller
 
         $validator = Validator::make($request->all(), [
             'username' => 'sometimes|string|min:3|max:50|unique:admin_users,username,' . $id,
-            'password' => 'sometimes|string|min:6|max:100',
+            'password' => 'sometimes|string|min:8|max:100|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
             'name' => 'sometimes|string|max:100',
             'role' => 'sometimes|in:admin,operator',
             'is_active' => 'sometimes|boolean',

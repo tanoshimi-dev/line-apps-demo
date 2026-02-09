@@ -15,7 +15,7 @@ use App\Http\Middleware\LineAuthMiddleware;
 use Illuminate\Support\Facades\Route;
 
 // LINE auth member endpoints
-Route::middleware([LineAuthMiddleware::class])->group(function () {
+Route::middleware([LineAuthMiddleware::class, 'throttle:api'])->group(function () {
     Route::get('/member', [MemberController::class, 'index']);
     Route::post('/member/register', [MemberController::class, 'register']);
     Route::get('/member/qrcode', [MemberController::class, 'qrcode']);
@@ -24,16 +24,20 @@ Route::middleware([LineAuthMiddleware::class])->group(function () {
     Route::post('/points/add', [PointController::class, 'add']);
     Route::post('/points/use', [PointController::class, 'use']);
 
-    // QR claim endpoints (member-facing)
-    Route::get('/qr/validate/{token}', [QrClaimController::class, 'validateToken']);
-    Route::post('/qr/claim', [QrClaimController::class, 'claim']);
+    // QR claim endpoints (member-facing, stricter rate limit)
+    Route::middleware(['throttle:qr-claim'])->group(function () {
+        Route::get('/qr/validate/{token}', [QrClaimController::class, 'validateToken']);
+        Route::post('/qr/claim', [QrClaimController::class, 'claim']);
+    });
 });
 
-// Admin auth (no middleware)
-Route::post('/admin/login', [AdminAuthController::class, 'login']);
+// Admin login (strict rate limit: 5/min per IP)
+Route::middleware(['throttle:admin-login'])->group(function () {
+    Route::post('/admin/login', [AdminAuthController::class, 'login']);
+});
 
 // Admin endpoints (admin auth required)
-Route::middleware([AdminAuthMiddleware::class])->prefix('admin')->group(function () {
+Route::middleware([AdminAuthMiddleware::class, 'throttle:api'])->prefix('admin')->group(function () {
     Route::post('/logout', [AdminAuthController::class, 'logout']);
     Route::get('/me', [AdminAuthController::class, 'me']);
 
@@ -65,6 +69,5 @@ Route::middleware([AdminAuthMiddleware::class])->prefix('admin')->group(function
 Route::get('/health', function () {
     return response()->json([
         'status' => 'ok',
-        'timestamp' => now()->toIso8601String(),
     ]);
 });

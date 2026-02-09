@@ -12,6 +12,9 @@ function Profile() {
   const [registering, setRegistering] = useState(false)
 
   const handleRegister = async () => {
+
+    alert(JSON.stringify(profile, null, 2))
+
     if (!profile) return
 
     try {

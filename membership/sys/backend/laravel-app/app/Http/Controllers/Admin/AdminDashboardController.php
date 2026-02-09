@@ -20,7 +20,7 @@ class AdminDashboardController extends Controller
         $todayStart = now()->startOfDay();
         $todayTransactions = PointHistory::where('created_at', '>=', $todayStart)->count();
 
-        $membersByRank = Member::selectRaw('rank, count(*) as count')
+        $membersByRank = Member::selectRaw('`rank`, count(*) as count')
             ->groupBy('rank')
             ->pluck('count', 'rank');
 

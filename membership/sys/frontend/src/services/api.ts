@@ -21,7 +21,8 @@ async function fetchWithAuth<T>(endpoint: string, options: RequestInit = {}): Pr
   })
 
   if (!response.ok) {
-    throw new Error(`API Error: ${response.status} ${response.statusText}`)
+    const errorData = await response.json().catch(() => ({}))
+    throw new Error(errorData.message || 'リクエストに失敗しました')
   }
 
   return response.json()
