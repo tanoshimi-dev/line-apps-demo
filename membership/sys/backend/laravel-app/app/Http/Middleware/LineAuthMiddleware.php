@@ -15,16 +15,6 @@ class LineAuthMiddleware
 
     public function handle(Request $request, Closure $next): Response
     {
-        // Development mode: bypass LINE auth when APP_DEBUG=true and using test token
-        if (config('app.debug') && $request->bearerToken() === 'dev_test_token') {
-            $request->merge([
-                'line_user_id' => $request->header('X-Test-User-Id', 'test_user_001'),
-                'line_display_name' => $request->header('X-Test-Display-Name', 'Test User'),
-                'line_picture_url' => $request->header('X-Test-Picture-Url'),
-            ]);
-            return $next($request);
-        }
-
         $token = $request->bearerToken();
 
         if (!$token) {
