@@ -33,5 +33,9 @@ export function logout(): void {
 }
 
 export function isLoggedIn(): boolean {
-  return liff.isLoggedIn();
+  try {
+    return liff.isLoggedIn();
+  } catch {
+    return false;
+  }
 }
