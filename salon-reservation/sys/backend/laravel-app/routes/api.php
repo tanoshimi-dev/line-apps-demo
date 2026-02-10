@@ -24,14 +24,15 @@ Route::get('/health', function () {
     return response()->json(['status' => 'ok']);
 });
 
+// Public routes (no auth required)
+Route::get('/services', [ServiceController::class, 'index']);
+Route::get('/staff', [StaffController::class, 'index']);
+
 // Member routes (LINE auth)
 Route::middleware(LineAuthMiddleware::class)->group(function () {
     Route::get('/member', [MemberController::class, 'index']);
     Route::post('/member/register', [MemberController::class, 'register']);
 
-    Route::get('/services', [ServiceController::class, 'index']);
-
-    Route::get('/staff', [StaffController::class, 'index']);
     Route::get('/staff/{id}/availability', [StaffController::class, 'availability']);
 
     Route::get('/reservations', [ReservationController::class, 'index']);

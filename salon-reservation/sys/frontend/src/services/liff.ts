@@ -3,13 +3,10 @@ import type { UserProfile } from '../types';
 
 export async function initializeLiff(liffId: string): Promise<void> {
   await liff.init({ liffId });
-
-  if (!liff.isLoggedIn()) {
-    liff.login();
-  }
 }
 
 export function getAccessToken(): string | null {
+  // alert('Getting access token: ' + liff.getAccessToken())
   return liff.getAccessToken();
 }
 

@@ -2,10 +2,10 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 const navItems = [
   { path: '/', label: 'ホーム', icon: '🏠' },
-  { path: '/services', label: 'メニュー', icon: '✂️' },
   { path: '/reserve', label: '予約', icon: '📅' },
-  { path: '/reservations', label: '予約履歴', icon: '📋' },
+  { path: '/reservations', label: '履歴', icon: '📋' },
   { path: '/messages', label: 'メッセージ', icon: '💬' },
+  { path: '/profile', label: 'マイページ', icon: '👤' },
 ];
 
 export default function Navigation() {

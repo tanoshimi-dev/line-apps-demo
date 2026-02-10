@@ -10,6 +10,12 @@ import type {
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3002/api';
 
+async function publicRequest(path: string): Promise<Response> {
+  return fetch(`${API_BASE}${path}`, {
+    headers: { 'Content-Type': 'application/json' },
+  });
+}
+
 async function apiRequest(path: string, options: RequestInit = {}): Promise<Response> {
   const token = getAccessToken() || 'dev_test_token';
 
@@ -79,17 +85,17 @@ export async function registerMember(data?: {
   return transformResponse<MemberInfo>(await res.json());
 }
 
-// Services
+// Services (public - no auth required)
 export async function getServices(): Promise<ServiceInfo[]> {
-  const res = await apiRequest('/services');
+  const res = await publicRequest('/services');
   if (!res.ok) throw new Error('Failed to get services');
   return transformResponse<ServiceInfo[]>(await res.json());
 }
 
-// Staff
+// Staff (public - no auth required)
 export async function getStaff(serviceId?: string): Promise<StaffInfo[]> {
   const params = serviceId ? `?service_id=${serviceId}` : '';
-  const res = await apiRequest(`/staff${params}`);
+  const res = await publicRequest(`/staff${params}`);
   if (!res.ok) throw new Error('Failed to get staff');
   return transformResponse<StaffInfo[]>(await res.json());
 }
