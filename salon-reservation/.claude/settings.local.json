@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(MSYS_NO_PATHCONV=1 docker run:*)",
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(docker compose:*)",
+      "Bash(docker exec:*)",
+      "Bash(curl:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run build:*)",
+      "Bash(python3:*)",
+      "Bash(MSYS_NO_PATHCONV=1 docker exec:*)"
+    ]
+  }
+}
