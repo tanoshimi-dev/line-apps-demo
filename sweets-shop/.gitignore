@@ -1,0 +1,25 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea
+.vscode
+*.sw?
+
+# Backend
+sys/backend/laravel-app/vendor/
+sys/backend/laravel-app/.env
+sys/backend/laravel-app/storage/*.key
+sys/backend/laravel-app/public/storage
+
+# Frontend
+sys/frontend/node_modules/
+sys/frontend/dist/
+sys/frontend/*.local
+
+# Docker
+sys/backend/docker/db-data/
+
+# Logs
+*.log
