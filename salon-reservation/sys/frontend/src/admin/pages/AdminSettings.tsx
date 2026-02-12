@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import QRCode from 'qrcode';
 import {
   getOperators,
   createOperator,
@@ -30,6 +31,7 @@ export default function AdminSettings() {
   const [twoFaCode, setTwoFaCode] = useState('');
   const [recoveryCodes, setRecoveryCodes] = useState<string[]>([]);
   const [disablePassword, setDisablePassword] = useState('');
+  const qrCanvasRef = useRef<HTMLCanvasElement>(null);
 
   const loadData = async () => {
     setLoading(true);
@@ -45,6 +47,12 @@ export default function AdminSettings() {
   };
 
   useEffect(() => { loadData(); }, []);
+
+  useEffect(() => {
+    if (twoFaSetup?.provisioningUri && qrCanvasRef.current) {
+      QRCode.toCanvas(qrCanvasRef.current, twoFaSetup.provisioningUri, { width: 200 });
+    }
+  }, [twoFaSetup]);
 
   const handleAddOperator = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -134,8 +142,8 @@ export default function AdminSettings() {
           </div>
         ) : twoFaSetup ? (
           <div>
-            <p>認証アプリで以下のシークレットを登録してください:</p>
-            <code className="admin-secret-code">{twoFaSetup.secret}</code>
+            <p>認証アプリでQRコードをスキャンしてください:</p>
+            <canvas ref={qrCanvasRef} style={{ marginBottom: 12 }} />
             <div className="admin-form-group" style={{ marginTop: 16 }}>
               <label>認証コード</label>
               <input

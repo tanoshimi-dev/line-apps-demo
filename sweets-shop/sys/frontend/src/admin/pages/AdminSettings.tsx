@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import QRCode from 'qrcode';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 import { getOperators, createOperator, updateOperator, deleteOperator, setup2fa, confirm2fa, disable2fa, get2faStatus } from '../services/adminApi';
 import type { Operator } from '../types';
@@ -13,6 +14,7 @@ export default function AdminSettings() {
   const [twoFaSetup, setTwoFaSetup] = useState<{ secret: string; provisioningUri: string } | null>(null);
   const [twoFaCode, setTwoFaCode] = useState('');
   const [disablePassword, setDisablePassword] = useState('');
+  const qrCanvasRef = useRef<HTMLCanvasElement>(null);
 
   const load = () => {
     Promise.all([getOperators(), get2faStatus()])
@@ -21,6 +23,12 @@ export default function AdminSettings() {
       .finally(() => setLoading(false));
   };
   useEffect(load, []);
+
+  useEffect(() => {
+    if (twoFaSetup?.provisioningUri && qrCanvasRef.current) {
+      QRCode.toCanvas(qrCanvasRef.current, twoFaSetup.provisioningUri, { width: 200 });
+    }
+  }, [twoFaSetup]);
 
   const handleCreateOperator = async () => {
     await createOperator({ username: form.username, password: form.password, name: form.name, role: form.role });
@@ -68,7 +76,7 @@ export default function AdminSettings() {
         ) : twoFaSetup ? (
           <div>
             <p style={{ marginBottom: 8 }}>認証アプリでQRコードをスキャンしてください:</p>
-            <p style={{ fontFamily: 'monospace', fontSize: 12, marginBottom: 12, wordBreak: 'break-all' }}>{twoFaSetup.provisioningUri}</p>
+            <canvas ref={qrCanvasRef} style={{ marginBottom: 12 }} />
             <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
               <input className="form-input" type="text" placeholder="6桁のコード" value={twoFaCode} onChange={(e) => setTwoFaCode(e.target.value)} style={{ width: 150 }} />
               <button className="admin-btn admin-btn-primary" onClick={handleConfirm2fa}>確認</button>
