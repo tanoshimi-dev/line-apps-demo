@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweets Shop Favicon Candidates</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #faf7f5;
+    color: #333;
+    padding: 24px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #e8735a;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(232,115,90,0.15);
+  }
+  .card.selected {
+    outline: 3px solid #e8735a;
+    background: #fff5f0;
+  }
+  .icon-preview {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 8px;
+  }
+  .icon-small {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .icon-small img {
+    border-radius: 4px;
+  }
+  .icon-number {
+    font-size: 12px;
+    font-weight: 700;
+    color: #e8735a;
+    margin-bottom: 4px;
+  }
+  .icon-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+  }
+  .size-label {
+    font-size: 10px;
+    color: #999;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+  <h1>Sweets Shop Favicon Candidates</h1>
+  <p class="subtitle">Click to select your favorite! 30 kawaii designs to choose from.</p>
+  <div class="grid">
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#01</div>
+      <img class="icon-preview" src="favicon-candidates/icon-01-dango.svg" alt="Dango">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-01-dango.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-01-dango.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Dango</div>
+      <div class="size-label">三色だんご</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#02</div>
+      <img class="icon-preview" src="favicon-candidates/icon-02-dorayaki.svg" alt="Dorayaki">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-02-dorayaki.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-02-dorayaki.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Dorayaki</div>
+      <div class="size-label">どら焼き</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#03</div>
+      <img class="icon-preview" src="favicon-candidates/icon-03-strawberry-daifuku.svg" alt="Strawberry Daifuku">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-03-strawberry-daifuku.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-03-strawberry-daifuku.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Strawberry Daifuku</div>
+      <div class="size-label">いちご大福</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#04</div>
+      <img class="icon-preview" src="favicon-candidates/icon-04-taiyaki.svg" alt="Taiyaki">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-04-taiyaki.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-04-taiyaki.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Taiyaki</div>
+      <div class="size-label">たい焼き</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#05</div>
+      <img class="icon-preview" src="favicon-candidates/icon-05-softcream.svg" alt="Soft Cream">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-05-softcream.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-05-softcream.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Soft Cream</div>
+      <div class="size-label">ソフトクリーム</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#06</div>
+      <img class="icon-preview" src="favicon-candidates/icon-06-lollipop.svg" alt="Lollipop">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-06-lollipop.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-06-lollipop.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Kawaii Lollipop</div>
+      <div class="size-label">ロリポップ</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#07</div>
+      <img class="icon-preview" src="favicon-candidates/icon-07-cupcake.svg" alt="Cupcake">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-07-cupcake.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-07-cupcake.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Cupcake</div>
+      <div class="size-label">カップケーキ</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#08</div>
+      <img class="icon-preview" src="favicon-candidates/icon-08-macaron.svg" alt="Macaron">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-08-macaron.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-08-macaron.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Macaron Stack</div>
+      <div class="size-label">マカロン</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#09</div>
+      <img class="icon-preview" src="favicon-candidates/icon-09-cookie.svg" alt="Cookie">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-09-cookie.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-09-cookie.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Kawaii Cookie</div>
+      <div class="size-label">クッキー</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#10</div>
+      <img class="icon-preview" src="favicon-candidates/icon-10-candy.svg" alt="Candy">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-10-candy.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-10-candy.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Candy</div>
+      <div class="size-label">キャンディ</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#11</div>
+      <img class="icon-preview" src="favicon-candidates/icon-11-cake-slice.svg" alt="Cake Slice">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-11-cake-slice.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-11-cake-slice.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Cake Slice</div>
+      <div class="size-label">ケーキ</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#12</div>
+      <img class="icon-preview" src="favicon-candidates/icon-12-pudding.svg" alt="Pudding">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-12-pudding.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-12-pudding.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Kawaii Pudding</div>
+      <div class="size-label">プリン</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#13</div>
+      <img class="icon-preview" src="favicon-candidates/icon-13-donut.svg" alt="Donut">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-13-donut.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-13-donut.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Sprinkle Donut</div>
+      <div class="size-label">ドーナツ</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#14</div>
+      <img class="icon-preview" src="favicon-candidates/icon-14-icecream-bowl.svg" alt="Ice Cream Bowl">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-14-icecream-bowl.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-14-icecream-bowl.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Ice Cream Bowl</div>
+      <div class="size-label">アイスクリーム</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#15</div>
+      <img class="icon-preview" src="favicon-candidates/icon-15-letter-s.svg" alt="Letter S">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-15-letter-s.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-15-letter-s.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Letter "S"</div>
+      <div class="size-label">Sロゴ</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#16</div>
+      <img class="icon-preview" src="favicon-candidates/icon-16-heart-cookie.svg" alt="Heart Cookie">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-16-heart-cookie.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-16-heart-cookie.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Heart Cookie</div>
+      <div class="size-label">ハートクッキー</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#17</div>
+      <img class="icon-preview" src="favicon-candidates/icon-17-star-cookie.svg" alt="Star Cookie">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-17-star-cookie.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-17-star-cookie.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Star Cookie</div>
+      <div class="size-label">星クッキー</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#18</div>
+      <img class="icon-preview" src="favicon-candidates/icon-18-mochi-kawaii.svg" alt="Kawaii Mochi">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-18-mochi-kawaii.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-18-mochi-kawaii.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Kawaii Mochi</div>
+      <div class="size-label">もちキャラ</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#19</div>
+      <img class="icon-preview" src="favicon-candidates/icon-19-sakura-sweet.svg" alt="Sakura Sweet">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-19-sakura-sweet.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-19-sakura-sweet.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Sakura Sweet</div>
+      <div class="size-label">桜スイーツ</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#20</div>
+      <img class="icon-preview" src="favicon-candidates/icon-20-whipped-cream.svg" alt="Whipped Cream">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-20-whipped-cream.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-20-whipped-cream.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Whipped Cream</div>
+      <div class="size-label">ホイップクリーム</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#21</div>
+      <img class="icon-preview" src="favicon-candidates/icon-21-bubble-tea.svg" alt="Bubble Tea">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-21-bubble-tea.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-21-bubble-tea.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Bubble Tea</div>
+      <div class="size-label">タピオカ</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#22</div>
+      <img class="icon-preview" src="favicon-candidates/icon-22-chocolate.svg" alt="Chocolate">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-22-chocolate.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-22-chocolate.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Chocolate Bar</div>
+      <div class="size-label">チョコレート</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#23</div>
+      <img class="icon-preview" src="favicon-candidates/icon-23-waffle.svg" alt="Waffle">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-23-waffle.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-23-waffle.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Waffle</div>
+      <div class="size-label">ワッフル</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#24</div>
+      <img class="icon-preview" src="favicon-candidates/icon-24-parfait-glass.svg" alt="Parfait">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-24-parfait-glass.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-24-parfait-glass.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Parfait Glass</div>
+      <div class="size-label">パフェ</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#25</div>
+      <img class="icon-preview" src="favicon-candidates/icon-25-crepe-cone.svg" alt="Crepe">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-25-crepe-cone.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-25-crepe-cone.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Crepe Cone</div>
+      <div class="size-label">クレープ</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#26</div>
+      <img class="icon-preview" src="favicon-candidates/icon-26-swiss-roll.svg" alt="Swiss Roll">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-26-swiss-roll.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-26-swiss-roll.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Swiss Roll</div>
+      <div class="size-label">ロールケーキ</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#27</div>
+      <img class="icon-preview" src="favicon-candidates/icon-27-wagashi-leaf.svg" alt="Wagashi">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-27-wagashi-leaf.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-27-wagashi-leaf.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Wagashi Leaf</div>
+      <div class="size-label">和菓子</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#28</div>
+      <img class="icon-preview" src="favicon-candidates/icon-28-shop-house.svg" alt="Shop House">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-28-shop-house.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-28-shop-house.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Sweets Shop</div>
+      <div class="size-label">スイーツショップ</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#29</div>
+      <img class="icon-preview" src="favicon-candidates/icon-29-spoon-sweet.svg" alt="Spoon Sweet">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-29-spoon-sweet.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-29-spoon-sweet.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Spoon Sweet</div>
+      <div class="size-label">スプーンスイーツ</div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('selected')">
+      <div class="icon-number">#30</div>
+      <img class="icon-preview" src="favicon-candidates/icon-30-crown-sweet.svg" alt="Crown Sweet">
+      <div class="icon-small">
+        <img src="favicon-candidates/icon-30-crown-sweet.svg" width="32" height="32">
+        <img src="favicon-candidates/icon-30-crown-sweet.svg" width="16" height="16">
+      </div>
+      <div class="icon-name">Crown Sweet</div>
+      <div class="size-label">王冠スイーツ</div>
+    </div>
+
+  </div>
+</body>
+</html>

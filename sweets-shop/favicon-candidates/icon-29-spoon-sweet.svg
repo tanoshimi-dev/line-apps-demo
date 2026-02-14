@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Spoon with sweet -->
+  <rect width="64" height="64" rx="14" fill="#FFF5F5"/>
+  <path d="M30 40 L28 58" stroke="#E0E0E0" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="32" cy="32" rx="16" ry="20" fill="#F5F5F5" stroke="#E0E0E0" stroke-width="1.5"/>
+  <circle cx="32" cy="24" r="10" fill="#F8A0B8"/>
+  <circle cx="32" cy="22" r="8" fill="#F48FB1"/>
+  <circle cx="28" cy="20" r="2" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="32" cy="14" r="3" fill="#E8556D"/>
+  <path d="M30 11 L32 8 L34 11" fill="#4CAF50"/>
+</svg>

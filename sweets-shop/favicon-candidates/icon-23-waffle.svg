@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Waffle with cream -->
+  <rect width="64" height="64" rx="14" fill="#FFF8E1"/>
+  <rect x="10" y="22" width="44" height="32" rx="6" fill="#E8B84C"/>
+  <rect x="12" y="24" width="40" height="28" rx="5" fill="#D4A03A"/>
+  <line x1="22" y1="24" x2="22" y2="52" stroke="#C4903A" stroke-width="1"/>
+  <line x1="32" y1="24" x2="32" y2="52" stroke="#C4903A" stroke-width="1"/>
+  <line x1="42" y1="24" x2="42" y2="52" stroke="#C4903A" stroke-width="1"/>
+  <line x1="12" y1="32" x2="52" y2="32" stroke="#C4903A" stroke-width="1"/>
+  <line x1="12" y1="42" x2="52" y2="42" stroke="#C4903A" stroke-width="1"/>
+  <ellipse cx="32" cy="22" rx="14" ry="6" fill="#FFFFFF"/>
+  <circle cx="32" cy="14" r="4" fill="#E8556D"/>
+  <path d="M30 10 L32 7 L34 10" fill="#4CAF50"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Whipped cream swirl -->
+  <rect width="64" height="64" rx="14" fill="#FFF5F5"/>
+  <path d="M32 8 Q38 8, 40 14 Q44 12, 46 18 Q50 18, 50 24 Q54 26, 52 32 Q56 36, 50 40 Q52 44, 46 46 Q46 50, 40 50 Q38 54, 32 52 Q26 54, 24 50 Q18 50, 18 46 Q12 44, 14 40 Q8 36, 12 32 Q10 26, 14 24 Q14 18, 18 18 Q20 12, 24 14 Q26 8, 32 8Z" fill="#FFFFFF" stroke="#EDE0D4" stroke-width="1"/>
+  <path d="M28 24 Q32 18, 36 24 Q38 28, 34 30 Q38 32, 36 36 Q32 40, 28 36 Q26 32, 30 30 Q26 28, 28 24Z" fill="#FFF0ED" stroke="#F0D0C8" stroke-width="0.5"/>
+  <circle cx="32" cy="18" r="3" fill="#E8556D"/>
+</svg>

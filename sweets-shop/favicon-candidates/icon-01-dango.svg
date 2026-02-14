@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Dango on stick - 3 balls pink/white/green -->
+  <rect width="64" height="64" rx="14" fill="#FFF0ED"/>
+  <line x1="32" y1="12" x2="32" y2="56" stroke="#C4956A" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="32" cy="17" r="9" fill="#F8A0B8"/>
+  <circle cx="32" cy="33" r="9" fill="#FFFFFF" stroke="#EDE0D4" stroke-width="1"/>
+  <circle cx="32" cy="49" r="9" fill="#8BC58A"/>
+</svg>

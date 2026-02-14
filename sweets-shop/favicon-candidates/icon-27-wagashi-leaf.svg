@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Wagashi with leaf -->
+  <rect width="64" height="64" rx="14" fill="#E8F5E9"/>
+  <path d="M32 10 Q50 16, 52 32 Q50 48, 32 54 Q14 48, 12 32 Q14 16, 32 10Z" fill="#A5D6A7"/>
+  <path d="M32 14 L32 50 M22 24 L42 24 M20 32 L44 32 M22 40 L42 40" stroke="#81C784" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="32" cy="32" r="10" fill="#F8A0B8" opacity="0.9"/>
+  <circle cx="32" cy="32" r="7" fill="#F48FB1"/>
+  <circle cx="30" cy="30" r="2" fill="#FFFFFF" opacity="0.3"/>
+</svg>

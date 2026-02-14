@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Macaron stack -->
+  <rect width="64" height="64" rx="14" fill="#E8F5E9"/>
+  <ellipse cx="32" cy="48" rx="16" ry="8" fill="#A5D6A7"/>
+  <rect x="16" y="44" width="32" height="4" rx="2" fill="#FFFFFF"/>
+  <ellipse cx="32" cy="42" rx="16" ry="8" fill="#81C784"/>
+  <ellipse cx="32" cy="32" rx="16" ry="8" fill="#F8A0B8"/>
+  <rect x="16" y="28" width="32" height="4" rx="2" fill="#FFFFFF"/>
+  <ellipse cx="32" cy="26" rx="16" ry="8" fill="#F48FB1"/>
+  <ellipse cx="32" cy="16" rx="16" ry="8" fill="#CE93D8"/>
+  <rect x="16" y="12" width="32" height="4" rx="2" fill="#FFFFFF"/>
+  <ellipse cx="32" cy="10" rx="16" ry="8" fill="#BA68C8"/>
+</svg>

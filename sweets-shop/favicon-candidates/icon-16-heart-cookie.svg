@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Heart-shaped cookie -->
+  <rect width="64" height="64" rx="14" fill="#FFF0F3"/>
+  <path d="M32 54 C12 40, 4 24, 18 14 C26 8, 32 16, 32 16 C32 16, 38 8, 46 14 C60 24, 52 40, 32 54Z" fill="#F48FB1"/>
+  <path d="M32 50 C16 38, 10 26, 20 18 C26 13, 32 18, 32 18 C32 18, 38 13, 44 18 C54 26, 48 38, 32 50Z" fill="#F8A0B8"/>
+  <circle cx="24" cy="26" r="1.5" fill="#FFFFFF" opacity="0.5"/>
+  <circle cx="38" cy="24" r="1" fill="#FFFFFF" opacity="0.5"/>
+  <path d="M26 32 Q32 38, 38 32" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4"/>
+</svg>

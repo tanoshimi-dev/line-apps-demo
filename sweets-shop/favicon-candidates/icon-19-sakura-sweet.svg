@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Sakura petal with sweet center -->
+  <rect width="64" height="64" rx="14" fill="#FFF0F3"/>
+  <g transform="translate(32,32)">
+    <ellipse cx="0" cy="-14" rx="8" ry="14" fill="#F8A0B8" transform="rotate(0)"/>
+    <ellipse cx="0" cy="-14" rx="8" ry="14" fill="#F8A0B8" transform="rotate(72)"/>
+    <ellipse cx="0" cy="-14" rx="8" ry="14" fill="#F8A0B8" transform="rotate(144)"/>
+    <ellipse cx="0" cy="-14" rx="8" ry="14" fill="#F8A0B8" transform="rotate(216)"/>
+    <ellipse cx="0" cy="-14" rx="8" ry="14" fill="#F8A0B8" transform="rotate(288)"/>
+  </g>
+  <circle cx="32" cy="32" r="8" fill="#FFFFFF"/>
+  <circle cx="32" cy="32" r="5" fill="#F48FB1"/>
+</svg>

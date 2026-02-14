@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Star cookie -->
+  <rect width="64" height="64" rx="14" fill="#FFF8E1"/>
+  <polygon points="32,6 39,24 58,24 43,36 49,54 32,44 15,54 21,36 6,24 25,24" fill="#E8C876"/>
+  <polygon points="32,10 38,24 52,24 41,34 46,48 32,40 18,48 23,34 12,24 26,24" fill="#F0D890"/>
+  <circle cx="32" cy="28" r="2" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="26" cy="34" r="1.5" fill="#FFFFFF" opacity="0.3"/>
+  <circle cx="38" cy="34" r="1.5" fill="#FFFFFF" opacity="0.3"/>
+</svg>

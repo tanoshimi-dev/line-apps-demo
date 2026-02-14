@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Soft serve ice cream -->
+  <rect width="64" height="64" rx="14" fill="#F3E5F5"/>
+  <path d="M24 40 L32 58 L40 40Z" fill="#E8C876"/>
+  <path d="M24 40 L40 40" stroke="#D4A03A" stroke-width="1"/>
+  <circle cx="32" cy="34" r="10" fill="#FFF8F0"/>
+  <circle cx="32" cy="26" r="8" fill="#FFFFFF"/>
+  <circle cx="32" cy="20" r="6" fill="#FFF8F0"/>
+  <ellipse cx="32" cy="15" rx="4" ry="5" fill="#FFFFFF"/>
+  <circle cx="28" cy="22" r="1.5" fill="#FFE0E0" opacity="0.4"/>
+</svg>

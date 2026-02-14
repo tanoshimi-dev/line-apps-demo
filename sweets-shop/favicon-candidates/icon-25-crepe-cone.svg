@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Crepe cone -->
+  <rect width="64" height="64" rx="14" fill="#FFF0ED"/>
+  <path d="M20 24 L32 58 L44 24Z" fill="#F0D890"/>
+  <path d="M20 24 L44 24" stroke="#E8C876" stroke-width="1"/>
+  <circle cx="26" cy="18" r="8" fill="#A5D6A7"/>
+  <circle cx="38" cy="18" r="8" fill="#F8A0B8"/>
+  <circle cx="32" cy="12" r="7" fill="#FFFFFF"/>
+  <circle cx="28" cy="10" r="3" fill="#E8556D"/>
+  <circle cx="36" cy="8" r="2.5" fill="#E8556D"/>
+  <circle cx="27" cy="9" r="0.8" fill="#FFFFFF" opacity="0.5"/>
+</svg>

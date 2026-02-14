@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Taiyaki fish -->
+  <rect width="64" height="64" rx="14" fill="#FFF8E1"/>
+  <ellipse cx="28" cy="34" rx="18" ry="14" fill="#E8B84C" transform="rotate(-10 28 34)"/>
+  <path d="M46 28 L58 18 L56 34 L58 48 L46 40Z" fill="#D4A03A"/>
+  <circle cx="20" cy="30" r="3" fill="#5C3620"/>
+  <circle cx="19" cy="29" r="1" fill="#FFFFFF"/>
+  <path d="M24 40 Q28 44, 34 40" fill="none" stroke="#C4873A" stroke-width="1.5"/>
+  <path d="M18 36 Q22 38, 26 36" fill="none" stroke="#C4873A" stroke-width="1" opacity="0.5"/>
+</svg>

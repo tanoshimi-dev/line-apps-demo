@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salon Icon Preview - Choose Your Favorite</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    padding: 40px 20px;
+  }
+  h1 {
+    text-align: center;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+    font-size: 28px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .icon-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  .icon-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  .icon-card svg {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 12px;
+  }
+  .icon-card .number {
+    display: inline-block;
+    background: #06C755;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .icon-card .name {
+    font-size: 13px;
+    color: #555;
+    font-weight: 500;
+  }
+  .preview-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .preview-row .small { width: 32px; height: 32px; }
+  .preview-row .medium { width: 48px; height: 48px; }
+  .preview-row .large { width: 80px; height: 80px; }
+</style>
+</head>
+<body>
+<h1>Salon Reservation App - Icon Designs</h1>
+<p class="subtitle">30 different styles. Tell me the number of your favorite!</p>
+
+<div class="grid">
+
+<!-- Icon 1: Classic Scissors -->
+<div class="icon-card">
+  <div class="number">1</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="30" fill="#06C755"/>
+    <path d="M22 20c-4.4 0-8 3.6-8 8s3.6 8 8 8c1.5 0 2.9-.4 4.1-1.1L32 32l-5.9-2.9C24.9 20.4 22 20 22 20z" stroke="#fff" stroke-width="2.5" fill="none"/>
+    <path d="M22 36c-4.4 0-8 3.6-8 8s3.6 8 8 8c1.5 0 2.9-.4 4.1-1.1L32 44l-5.9-2.9z" stroke="#fff" stroke-width="2.5" fill="none" transform="translate(0,-8) scale(1,1)"/>
+    <circle cx="20" cy="24" r="5" stroke="#fff" stroke-width="2.5" fill="none"/>
+    <circle cx="20" cy="40" r="5" stroke="#fff" stroke-width="2.5" fill="none"/>
+    <line x1="25" y1="27" x2="44" y2="38" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="25" y1="37" x2="44" y2="26" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Classic Scissors</div>
+</div>
+
+<!-- Icon 2: Minimal Scissors -->
+<div class="icon-card">
+  <div class="number">2</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="60" height="60" rx="14" fill="#06C755"/>
+    <circle cx="22" cy="22" r="6" stroke="#fff" stroke-width="2" fill="none"/>
+    <circle cx="22" cy="42" r="6" stroke="#fff" stroke-width="2" fill="none"/>
+    <line x1="27" y1="25" x2="46" y2="42" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="27" y1="39" x2="46" y2="22" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Minimal Rounded Square</div>
+</div>
+
+<!-- Icon 3: Scissors Badge -->
+<div class="icon-card">
+  <div class="number">3</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="28" fill="#1a1a2e"/>
+    <circle cx="32" cy="32" r="24" stroke="#06C755" stroke-width="2" fill="none"/>
+    <circle cx="24" cy="24" r="5" stroke="#06C755" stroke-width="2" fill="none"/>
+    <circle cx="24" cy="40" r="5" stroke="#06C755" stroke-width="2" fill="none"/>
+    <line x1="28" y1="27" x2="44" y2="40" stroke="#06C755" stroke-width="2" stroke-linecap="round"/>
+    <line x1="28" y1="37" x2="44" y2="24" stroke="#06C755" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Dark Badge</div>
+</div>
+
+<!-- Icon 4: Hair Dryer -->
+<div class="icon-card">
+  <div class="number">4</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="30" fill="#06C755"/>
+    <ellipse cx="30" cy="28" rx="12" ry="9" fill="none" stroke="#fff" stroke-width="2.5"/>
+    <rect x="26" y="35" width="8" height="16" rx="3" fill="none" stroke="#fff" stroke-width="2.5"/>
+    <circle cx="30" cy="28" r="4" fill="none" stroke="#fff" stroke-width="2"/>
+    <path d="M42 25 L48 20" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <path d="M42 28 L50 28" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <path d="M42 31 L48 36" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Hair Dryer</div>
+</div>
+
+<!-- Icon 5: Comb & Scissors -->
+<div class="icon-card">
+  <div class="number">5</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="60" height="60" rx="14" fill="#06C755"/>
+    <!-- Comb -->
+    <rect x="14" y="18" width="6" height="28" rx="2" fill="none" stroke="#fff" stroke-width="2"/>
+    <line x1="20" y1="22" x2="26" y2="22" stroke="#fff" stroke-width="1.5"/>
+    <line x1="20" y1="26" x2="26" y2="26" stroke="#fff" stroke-width="1.5"/>
+    <line x1="20" y1="30" x2="26" y2="30" stroke="#fff" stroke-width="1.5"/>
+    <line x1="20" y1="34" x2="26" y2="34" stroke="#fff" stroke-width="1.5"/>
+    <line x1="20" y1="38" x2="26" y2="38" stroke="#fff" stroke-width="1.5"/>
+    <line x1="20" y1="42" x2="26" y2="42" stroke="#fff" stroke-width="1.5"/>
+    <!-- Scissors -->
+    <circle cx="40" cy="22" r="4" stroke="#fff" stroke-width="2" fill="none"/>
+    <circle cx="40" cy="42" r="4" stroke="#fff" stroke-width="2" fill="none"/>
+    <line x1="43" y1="25" x2="50" y2="40" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <line x1="43" y1="39" x2="50" y2="24" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Comb & Scissors</div>
+</div>
+
+<!-- Icon 6: Elegant S -->
+<div class="icon-card">
+  <div class="number">6</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="30" fill="#06C755"/>
+    <text x="32" y="44" text-anchor="middle" font-family="Georgia, serif" font-size="36" font-weight="bold" font-style="italic" fill="#fff">S</text>
+  </svg>
+  <div class="name">Elegant S Monogram</div>
+</div>
+
+<!-- Icon 7: Hexagon Scissors -->
+<div class="icon-card">
+  <div class="number">7</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="32,2 58,17 58,47 32,62 6,47 6,17" fill="#06C755"/>
+    <circle cx="24" cy="24" r="5" stroke="#fff" stroke-width="2" fill="none"/>
+    <circle cx="24" cy="40" r="5" stroke="#fff" stroke-width="2" fill="none"/>
+    <line x1="28" y1="27" x2="46" y2="40" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="28" y1="37" x2="46" y2="24" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Hexagon Scissors</div>
+</div>
+
+<!-- Icon 8: Gradient Modern -->
+<div class="icon-card">
+  <div class="number">8</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="g8" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#06C755"/>
+        <stop offset="100%" stop-color="#04a045"/>
+      </linearGradient>
+    </defs>
+    <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#g8)"/>
+    <path d="M20 20 C20 20, 32 30, 32 32 C32 30, 44 20, 44 20" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M20 44 C20 44, 32 34, 32 32 C32 34, 44 44, 44 44" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <circle cx="18" cy="20" r="4" stroke="#fff" stroke-width="2" fill="none"/>
+    <circle cx="18" cy="44" r="4" stroke="#fff" stroke-width="2" fill="none"/>
+  </svg>
+  <div class="name">Gradient Modern</div>
+</div>
+
+<!-- Icon 9: Hair Wave -->
+<div class="icon-card">
+  <div class="number">9</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="30" fill="#06C755"/>
+    <path d="M20 18 C20 18, 28 22, 28 32 C28 42, 20 46, 20 46" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M28 18 C28 18, 36 22, 36 32 C36 42, 28 46, 28 46" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M36 18 C36 18, 44 22, 44 32 C44 42, 36 46, 36 46" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Hair Waves</div>
+</div>
+
+<!-- Icon 10: Mirror -->
+<div class="icon-card">
+  <div class="number">10</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="60" height="60" rx="14" fill="#06C755"/>
+    <circle cx="32" cy="26" r="14" stroke="#fff" stroke-width="2.5" fill="none"/>
+    <ellipse cx="32" cy="26" rx="8" ry="8" fill="rgba(255,255,255,0.15)"/>
+    <rect x="29" y="40" width="6" height="14" rx="2" stroke="#fff" stroke-width="2.5" fill="none"/>
+  </svg>
+  <div class="name">Hand Mirror</div>
+</div>
+
+<!-- Icon 11: Scissors Star -->
+<div class="icon-card">
+  <div class="number">11</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="30" fill="#fff" stroke="#06C755" stroke-width="3"/>
+    <circle cx="22" cy="22" r="5" stroke="#06C755" stroke-width="2" fill="none"/>
+    <circle cx="22" cy="42" r="5" stroke="#06C755" stroke-width="2" fill="none"/>
+    <line x1="26" y1="25" x2="46" y2="42" stroke="#06C755" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="26" y1="39" x2="46" y2="22" stroke="#06C755" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="46" cy="32" r="2" fill="#06C755"/>
+  </svg>
+  <div class="name">Outlined Green</div>
+</div>
+
+<!-- Icon 12: Diamond -->
+<div class="icon-card">
+  <div class="number">12</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="10" y="10" width="44" height="44" rx="4" fill="#06C755" transform="rotate(45 32 32)"/>
+    <circle cx="26" cy="26" r="4" stroke="#fff" stroke-width="2" fill="none"/>
+    <circle cx="26" cy="38" r="4" stroke="#fff" stroke-width="2" fill="none"/>
+    <line x1="29" y1="28" x2="40" y2="38" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <line x1="29" y1="36" x2="40" y2="26" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Diamond Shape</div>
+</div>
+
+<!-- Icon 13: Brush -->
+<div class="icon-card">
+  <div class="number">13</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="30" fill="#06C755"/>
+    <path d="M38 14 L44 14 L42 32 L36 32 Z" fill="#fff" opacity="0.9"/>
+    <rect x="34" y="32" width="10" height="6" rx="1" fill="#fff"/>
+    <path d="M34 38 L36 50 L42 50 L44 38 Z" fill="#fff" opacity="0.7"/>
+    <line x1="36" y1="40" x2="36" y2="48" stroke="#06C755" stroke-width="1"/>
+    <line x1="38" y1="39" x2="38" y2="49" stroke="#06C755" stroke-width="1"/>
+    <line x1="40" y1="39" x2="40" y2="49" stroke="#06C755" stroke-width="1"/>
+    <line x1="42" y1="40" x2="42" y2="48" stroke="#06C755" stroke-width="1"/>
+    <!-- Small scissors -->
+    <circle cx="22" cy="28" r="3.5" stroke="#fff" stroke-width="1.5" fill="none"/>
+    <circle cx="22" cy="38" r="3.5" stroke="#fff" stroke-width="1.5" fill="none"/>
+    <line x1="25" y1="30" x2="30" y2="37" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="25" y1="36" x2="30" y2="29" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Brush & Scissors</div>
+</div>
+
+<!-- Icon 14: Crown Premium -->
+<div class="icon-card">
+  <div class="number">14</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="60" height="60" rx="14" fill="#1a1a2e"/>
+    <!-- Crown -->
+    <path d="M18 22 L24 30 L32 18 L40 30 L46 22 L44 38 L20 38 Z" fill="#06C755"/>
+    <!-- Scissors below -->
+    <circle cx="24" cy="42" r="3" stroke="#06C755" stroke-width="1.5" fill="none"/>
+    <circle cx="24" cy="52" r="3" stroke="#06C755" stroke-width="1.5" fill="none"/>
+    <line x1="27" y1="43" x2="40" y2="52" stroke="#06C755" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="27" y1="51" x2="40" y2="42" stroke="#06C755" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Crown Premium</div>
+</div>
+
+<!-- Icon 15: Leaf/Organic -->
+<div class="icon-card">
+  <div class="number">15</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M32 2 C50 10, 62 26, 62 32 C62 49, 49 62, 32 62 C15 62, 2 49, 2 32 C2 26, 14 10, 32 2Z" fill="#06C755"/>
+    <circle cx="24" cy="24" r="5" stroke="#fff" stroke-width="2" fill="none"/>
+    <circle cx="24" cy="40" r="5" stroke="#fff" stroke-width="2" fill="none"/>
+    <line x1="28" y1="27" x2="44" y2="40" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="28" y1="37" x2="44" y2="24" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Leaf vein -->
+    <path d="M48 16 C42 22, 36 28, 32 32" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" fill="none"/>
+  </svg>
+  <div class="name">Organic Leaf</div>
+</div>
+
+<!-- Icon 16: Bold & Simple -->
+<div class="icon-card">
+  <div class="number">16</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="60" height="60" rx="8" fill="#06C755"/>
+    <circle cx="22" cy="22" r="7" stroke="#fff" stroke-width="3" fill="none"/>
+    <circle cx="22" cy="42" r="7" stroke="#fff" stroke-width="3" fill="none"/>
+    <line x1="28" y1="26" x2="48" y2="44" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <line x1="28" y1="38" x2="48" y2="20" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Bold & Simple</div>
+</div>
+
+<!-- Icon 17: Retro Badge -->
+<div class="icon-card">
+  <div class="number">17</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="30" fill="#06C755"/>
+    <circle cx="32" cy="32" r="26" fill="none" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="32" cy="32" r="23" fill="none" stroke="#fff" stroke-width="0.5"/>
+    <circle cx="25" cy="26" r="4" stroke="#fff" stroke-width="1.5" fill="none"/>
+    <circle cx="25" cy="38" r="4" stroke="#fff" stroke-width="1.5" fill="none"/>
+    <line x1="28" y1="28" x2="42" y2="38" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <line x1="28" y1="36" x2="42" y2="26" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <text x="32" y="54" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#fff" letter-spacing="3">SALON</text>
+  </svg>
+  <div class="name">Retro Badge</div>
+</div>
+
+<!-- Icon 18: Two-tone -->
+<div class="icon-card">
+  <div class="number">18</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="60" height="60" rx="14" fill="#06C755"/>
+    <rect x="2" y="32" width="60" height="30" rx="0" fill="#05a648"/>
+    <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="none"/>
+    <!-- Clip the bottom -->
+    <clipPath id="clip18">
+      <rect x="2" y="2" width="60" height="60" rx="14"/>
+    </clipPath>
+    <g clip-path="url(#clip18)">
+      <rect x="2" y="32" width="60" height="30" fill="#05a648"/>
+    </g>
+    <circle cx="24" cy="24" r="5.5" stroke="#fff" stroke-width="2" fill="none"/>
+    <circle cx="24" cy="40" r="5.5" stroke="#fff" stroke-width="2" fill="none"/>
+    <line x1="28" y1="27" x2="46" y2="40" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="28" y1="37" x2="46" y2="24" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Two-tone Green</div>
+</div>
+
+<!-- Icon 19: Abstract Cross Scissors -->
+<div class="icon-card">
+  <div class="number">19</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="30" fill="#06C755"/>
+    <path d="M16 16 L48 48" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+    <path d="M16 48 L48 16" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="16" cy="16" r="6" stroke="#fff" stroke-width="2" fill="#06C755"/>
+    <circle cx="16" cy="48" r="6" stroke="#fff" stroke-width="2" fill="#06C755"/>
+    <circle cx="32" cy="32" r="3" fill="#fff"/>
+  </svg>
+  <div class="name">Abstract X Cut</div>
+</div>
+
+<!-- Icon 20: Japanese Style -->
+<div class="icon-card">
+  <div class="number">20</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="30" fill="#fff"/>
+    <circle cx="32" cy="32" r="28" stroke="#06C755" stroke-width="1"/>
+    <!-- Inner circle pattern -->
+    <circle cx="32" cy="32" r="20" stroke="#06C755" stroke-width="0.5"/>
+    <!-- Scissors -->
+    <circle cx="24" cy="26" r="4.5" stroke="#06C755" stroke-width="1.5" fill="none"/>
+    <circle cx="24" cy="38" r="4.5" stroke="#06C755" stroke-width="1.5" fill="none"/>
+    <line x1="28" y1="28" x2="44" y2="38" stroke="#06C755" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="28" y1="36" x2="44" y2="26" stroke="#06C755" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- Decorative dots -->
+    <circle cx="32" cy="10" r="1.5" fill="#06C755"/>
+    <circle cx="32" cy="54" r="1.5" fill="#06C755"/>
+    <circle cx="10" cy="32" r="1.5" fill="#06C755"/>
+    <circle cx="54" cy="32" r="1.5" fill="#06C755"/>
+  </svg>
+  <div class="name">Japanese Minimal</div>
+</div>
+
+<!-- Icon 21: Ribbon Banner -->
+<div class="icon-card">
+  <div class="number">21</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="g21" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#08e05f"/>
+        <stop offset="100%" stop-color="#06C755"/>
+      </linearGradient>
+    </defs>
+    <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#g21)"/>
+    <!-- Ribbon -->
+    <path d="M12 50 L20 44 L44 44 L52 50 L44 46 L20 46 Z" fill="rgba(255,255,255,0.3)"/>
+    <!-- Scissors -->
+    <circle cx="24" cy="22" r="5" stroke="#fff" stroke-width="2" fill="none"/>
+    <circle cx="24" cy="38" r="5" stroke="#fff" stroke-width="2" fill="none"/>
+    <line x1="28" y1="25" x2="44" y2="38" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="28" y1="35" x2="44" y2="22" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Gradient Ribbon</div>
+</div>
+
+<!-- Icon 22: Cute/Playful -->
+<div class="icon-card">
+  <div class="number">22</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="60" height="60" rx="20" fill="#06C755"/>
+    <circle cx="24" cy="24" r="5" stroke="#fff" stroke-width="2" fill="rgba(255,255,255,0.2)"/>
+    <circle cx="24" cy="40" r="5" stroke="#fff" stroke-width="2" fill="rgba(255,255,255,0.2)"/>
+    <line x1="28" y1="27" x2="44" y2="40" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="28" y1="37" x2="44" y2="24" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Sparkles -->
+    <circle cx="46" cy="16" r="1.5" fill="#fff"/>
+    <circle cx="50" cy="20" r="1" fill="#fff"/>
+    <circle cx="44" cy="12" r="1" fill="#fff"/>
+  </svg>
+  <div class="name">Cute Sparkle</div>
+</div>
+
+<!-- Icon 23: Shield -->
+<div class="icon-card">
+  <div class="number">23</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M32 4 L56 16 L56 36 C56 50 32 60 32 60 C32 60 8 50 8 36 L8 16 Z" fill="#06C755"/>
+    <circle cx="24" cy="26" r="4.5" stroke="#fff" stroke-width="2" fill="none"/>
+    <circle cx="24" cy="40" r="4.5" stroke="#fff" stroke-width="2" fill="none"/>
+    <line x1="28" y1="29" x2="42" y2="40" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <line x1="28" y1="37" x2="42" y2="26" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Shield</div>
+</div>
+
+<!-- Icon 24: Scissors Only (no bg) -->
+<div class="icon-card">
+  <div class="number">24</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="20" cy="18" r="8" stroke="#06C755" stroke-width="2.5" fill="none"/>
+    <circle cx="20" cy="46" r="8" stroke="#06C755" stroke-width="2.5" fill="none"/>
+    <line x1="27" y1="22" x2="54" y2="46" stroke="#06C755" stroke-width="3" stroke-linecap="round"/>
+    <line x1="27" y1="42" x2="54" y2="18" stroke="#06C755" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="40" cy="32" r="2" fill="#06C755"/>
+  </svg>
+  <div class="name">Pure Scissors</div>
+</div>
+
+<!-- Icon 25: Circle Outline -->
+<div class="icon-card">
+  <div class="number">25</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="29" stroke="#06C755" stroke-width="3" fill="#fff"/>
+    <path d="M18 20 Q24 18, 24 24 Q24 30, 18 28 Q12 26, 18 20Z" fill="#06C755"/>
+    <path d="M18 36 Q24 34, 24 40 Q24 46, 18 44 Q12 42, 18 36Z" fill="#06C755"/>
+    <line x1="26" y1="26" x2="46" y2="42" stroke="#06C755" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="26" y1="38" x2="46" y2="22" stroke="#06C755" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Filled Handles</div>
+</div>
+
+<!-- Icon 26: Dotted Circle -->
+<div class="icon-card">
+  <div class="number">26</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="28" stroke="#06C755" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
+    <circle cx="32" cy="32" r="22" fill="#06C755" opacity="0.1"/>
+    <circle cx="24" cy="24" r="5" stroke="#06C755" stroke-width="2" fill="none"/>
+    <circle cx="24" cy="40" r="5" stroke="#06C755" stroke-width="2" fill="none"/>
+    <line x1="28" y1="27" x2="44" y2="40" stroke="#06C755" stroke-width="2" stroke-linecap="round"/>
+    <line x1="28" y1="37" x2="44" y2="24" stroke="#06C755" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Dotted Circle</div>
+</div>
+
+<!-- Icon 27: Sunset Gradient -->
+<div class="icon-card">
+  <div class="number">27</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="g27" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#06C755"/>
+        <stop offset="50%" stop-color="#0ba84a"/>
+        <stop offset="100%" stop-color="#048a3a"/>
+      </linearGradient>
+    </defs>
+    <circle cx="32" cy="32" r="30" fill="url(#g27)"/>
+    <circle cx="24" cy="24" r="5.5" stroke="#fff" stroke-width="2" fill="none"/>
+    <circle cx="24" cy="40" r="5.5" stroke="#fff" stroke-width="2" fill="none"/>
+    <line x1="28" y1="27" x2="46" y2="40" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="28" y1="37" x2="46" y2="24" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Shine effect -->
+    <circle cx="42" cy="18" r="6" fill="rgba(255,255,255,0.1)"/>
+  </svg>
+  <div class="name">Deep Gradient</div>
+</div>
+
+<!-- Icon 28: Square Badge -->
+<div class="icon-card">
+  <div class="number">28</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="6" y="6" width="52" height="52" rx="4" fill="none" stroke="#06C755" stroke-width="3"/>
+    <rect x="12" y="12" width="40" height="40" rx="2" fill="#06C755"/>
+    <circle cx="24" cy="24" r="4.5" stroke="#fff" stroke-width="2" fill="none"/>
+    <circle cx="24" cy="40" r="4.5" stroke="#fff" stroke-width="2" fill="none"/>
+    <line x1="28" y1="27" x2="42" y2="40" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <line x1="28" y1="37" x2="42" y2="24" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <div class="name">Square Badge</div>
+</div>
+
+<!-- Icon 29: App Icon Modern -->
+<div class="icon-card">
+  <div class="number">29</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="g29" x1="0" y1="0" x2="0.5" y2="1">
+        <stop offset="0%" stop-color="#0de065"/>
+        <stop offset="100%" stop-color="#06C755"/>
+      </linearGradient>
+    </defs>
+    <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#g29)"/>
+    <!-- Modern geometric scissors -->
+    <path d="M20 18 C16 18, 14 22, 18 25 L32 32" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M20 46 C16 46, 14 42, 18 39 L32 32" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M32 32 L48 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M32 32 L48 42" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="32" cy="32" r="2.5" fill="#fff"/>
+    <circle cx="17" cy="21" r="4" stroke="#fff" stroke-width="2" fill="none"/>
+    <circle cx="17" cy="43" r="4" stroke="#fff" stroke-width="2" fill="none"/>
+  </svg>
+  <div class="name">Modern App Icon</div>
+</div>
+
+<!-- Icon 30: Elegant Dark -->
+<div class="icon-card">
+  <div class="number">30</div><br>
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="60" height="60" rx="14" fill="#1a1a2e"/>
+    <!-- Elegant thin scissors -->
+    <circle cx="22" cy="22" r="5.5" stroke="#06C755" stroke-width="1.5" fill="none"/>
+    <circle cx="22" cy="42" r="5.5" stroke="#06C755" stroke-width="1.5" fill="none"/>
+    <line x1="26" y1="25" x2="46" y2="42" stroke="#06C755" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="26" y1="39" x2="46" y2="22" stroke="#06C755" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- Accent line -->
+    <line x1="14" y1="56" x2="50" y2="56" stroke="#06C755" stroke-width="1" opacity="0.5"/>
+    <text x="32" y="12" text-anchor="middle" font-family="Georgia, serif" font-size="6" fill="#06C755" opacity="0.6">SALON</text>
+  </svg>
+  <div class="name">Elegant Dark</div>
+</div>
+
+</div>
+
+</body>
+</html>

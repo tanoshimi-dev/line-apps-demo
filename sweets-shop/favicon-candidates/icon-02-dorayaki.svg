@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Dorayaki -->
+  <rect width="64" height="64" rx="14" fill="#FFF5E6"/>
+  <ellipse cx="32" cy="36" rx="22" ry="10" fill="#8B5E3C"/>
+  <ellipse cx="32" cy="28" rx="22" ry="10" fill="#D4943A"/>
+  <ellipse cx="32" cy="32" rx="16" ry="3" fill="#5C3620" opacity="0.6"/>
+  <ellipse cx="32" cy="27" rx="18" ry="7" fill="#E8A84C"/>
+  <ellipse cx="26" cy="24" rx="4" ry="2" fill="#F0C070" opacity="0.5"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Cake slice with strawberry -->
+  <rect width="64" height="64" rx="14" fill="#FFF0F3"/>
+  <path d="M12 52 L32 12 L52 52Z" fill="#FFF5E6"/>
+  <path d="M12 52 L32 12 L52 52Z" fill="none" stroke="#E8C876" stroke-width="1"/>
+  <path d="M12 52 L52 52 L52 48 L12 48Z" fill="#F8A0B8"/>
+  <path d="M14 44 L50 44 L52 48 L12 48Z" fill="#FFFFFF"/>
+  <path d="M16 40 L48 40 L50 44 L14 44Z" fill="#FFF5E6"/>
+  <circle cx="32" cy="22" r="5" fill="#E8556D"/>
+  <circle cx="30" cy="20" r="1" fill="#FFFFFF" opacity="0.5"/>
+  <path d="M30 17 L32 14 L34 17" fill="#4CAF50"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Parfait glass -->
+  <rect width="64" height="64" rx="14" fill="#F3E5F5"/>
+  <path d="M22 16 L20 44 Q20 50, 32 50 Q44 50, 44 44 L42 16Z" fill="none" stroke="#E0E0E0" stroke-width="1.5"/>
+  <path d="M22 16 L20 44 Q20 50, 32 50 Q44 50, 44 44 L42 16Z" fill="#FFF9C4" opacity="0.5"/>
+  <rect x="26" y="50" width="12" height="2" rx="1" fill="#E0E0E0"/>
+  <ellipse cx="32" cy="54" rx="10" ry="2" fill="#E0E0E0"/>
+  <ellipse cx="32" cy="44" rx="11" ry="4" fill="#A5D6A7"/>
+  <ellipse cx="32" cy="38" rx="11" ry="4" fill="#F8A0B8"/>
+  <ellipse cx="32" cy="32" rx="10" ry="4" fill="#FFF9C4"/>
+  <ellipse cx="32" cy="26" rx="10" ry="4" fill="#CE93D8"/>
+  <circle cx="32" cy="18" r="6" fill="#FFFFFF"/>
+  <circle cx="32" cy="12" r="3" fill="#E8556D"/>
+</svg>

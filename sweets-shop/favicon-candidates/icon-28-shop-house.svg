@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Kawaii shop house -->
+  <rect width="64" height="64" rx="14" fill="#FFF0ED"/>
+  <rect x="12" y="28" width="40" height="28" rx="2" fill="#FFFFFF" stroke="#EDE0D4" stroke-width="1"/>
+  <path d="M8 30 L32 12 L56 30Z" fill="#F48FB1"/>
+  <path d="M10 30 L32 14 L54 30Z" fill="#F8A0B8"/>
+  <rect x="26" y="40" width="12" height="16" rx="1" fill="#E8C876"/>
+  <circle cx="36" cy="48" r="1.5" fill="#C4956A"/>
+  <rect x="16" y="34" width="8" height="8" rx="1" fill="#E1F5FE" stroke="#90CAF9" stroke-width="0.5"/>
+  <rect x="40" y="34" width="8" height="8" rx="1" fill="#E1F5FE" stroke="#90CAF9" stroke-width="0.5"/>
+  <path d="M12 28 Q20 26, 22 28 Q28 26, 32 28 Q36 26, 42 28 Q48 26, 52 28" fill="none" stroke="#F48FB1" stroke-width="2.5"/>
+  <circle cx="32" cy="20" r="3" fill="#FFD54F"/>
+</svg>

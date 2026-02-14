@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Kawaii pudding/flan -->
+  <rect width="64" height="64" rx="14" fill="#FFF8E1"/>
+  <ellipse cx="32" cy="50" rx="22" ry="4" fill="#E8A84C" opacity="0.3"/>
+  <path d="M14 46 Q14 52, 32 52 Q50 52, 50 46 L48 30 Q48 20, 32 20 Q16 20, 16 30Z" fill="#F0C870"/>
+  <path d="M14 46 Q14 42, 32 42 Q50 42, 50 46" fill="#E8A84C"/>
+  <ellipse cx="32" cy="20" rx="16" ry="5" fill="#E8C876"/>
+  <path d="M20 16 Q24 10, 32 12 Q38 10, 44 16" fill="#8B5E3C" opacity="0.6"/>
+  <circle cx="26" cy="32" r="2" fill="#333"/>
+  <circle cx="38" cy="32" r="2" fill="#333"/>
+  <path d="M29 37 Q32 40, 35 37" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="24" cy="36" r="3" fill="#F48FB1" opacity="0.3"/>
+  <circle cx="40" cy="36" r="3" fill="#F48FB1" opacity="0.3"/>
+</svg>
