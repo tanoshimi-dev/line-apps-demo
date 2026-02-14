@@ -1,58 +1,129 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { isLoggedIn, login } from '../services/liff';
-import { getCategories, getItems } from '../services/api';
-import type { SweetsCategory, SweetsItem } from '../types';
+
+const heroSweets = [
+  { src: '/sweets/dango.png', name: '', className: 'hero-float hero-float-1' },
+  { src: '/sweets/taiyaki.png', name: '', className: 'hero-float hero-float-2' },
+  { src: '/sweets/sakuramochi.png', name: '', className: 'hero-float hero-float-3' },
+  { src: '/sweets/softcream.png', name: '', className: 'hero-float hero-float-4' },
+  { src: '/sweets/dorayaki.png', name: '', className: 'hero-float hero-float-5' },
+];
+
+const showcaseSweets = [
+  { src: '/sweets/daifuku.png', name: 'いちご大福' },
+  { src: '/sweets/dango.png', name: 'お団子' },
+  { src: '/sweets/dorayaki.png', name: 'どら焼き' },
+  { src: '/sweets/taiyaki.png', name: 'たい焼き' },
+  { src: '/sweets/sakuramochi.png', name: '桜もち' },
+  { src: '/sweets/crepe.png', name: '抹茶クレープ' },
+  { src: '/sweets/parfait.png', name: '抹茶パフェ' },
+  { src: '/sweets/kakigori.png', name: 'かき氷' },
+  { src: '/sweets/mochi.png', name: 'おもち' },
+  { src: '/sweets/wagashi.png', name: '和菓子' },
+  { src: '/sweets/souffle-pancakes.png', name: 'スフレパンケーキ' },
+  { src: '/sweets/softcream.png', name: 'ソフトクリーム' },
+  { src: '/sweets/fruit-sandwiches.png', name: 'フルーツサンド' },
+  { src: '/sweets/matcha.png', name: '抹茶スイーツ' },
+  { src: '/sweets/flan.png', name: 'プリン' },
+  { src: '/sweets/choux-cream.png', name: 'シュークリーム' },
+];
+
+const features = [
+  { icon: '/sweets/parfait.png', title: 'スイーツ図鑑', desc: '季節のスイーツをチェック' },
+  { icon: '/sweets/daifuku.png', title: 'ポイントを貯める', desc: 'お買い物でポイントGET' },
+  { icon: '/sweets/wagashi.png', title: 'レビュー投稿', desc: 'お気に入りを共有しよう' },
+];
 
 export default function Guest() {
   const navigate = useNavigate();
-  const [categories, setCategories] = useState<SweetsCategory[]>([]);
-  const [items, setItems] = useState<SweetsItem[]>([]);
 
   useEffect(() => {
     if (isLoggedIn()) {
       navigate('/', { replace: true });
-      return;
     }
-    getCategories().then(setCategories).catch(console.error);
-    getItems().then(setItems).catch(console.error);
   }, [navigate]);
 
   return (
-    <div className="guest-page">
-      <div className="guest-hero">
-        <div className="guest-logo">Sweets Shop</div>
-        <div className="guest-subtitle">こだわりのスイーツをお届けします</div>
-      </div>
+    <div className="lp">
+      {/* Hero */}
+      <section className="lp-hero">
+        {heroSweets.map((s, i) => (
+          <img key={i} src={s.src} alt="" className={s.className} />
+        ))}
+        <div className="lp-hero-content">
+          <div className="lp-hero-badge">Japanese Sweets</div>
+          <h1 className="lp-hero-title">Sweets Shop</h1>
+          <p className="lp-hero-subtitle">
+            こだわりの和スイーツを<br />あなたにお届け
+          </p>
+          <img src="/sweets/parfait.png" alt="parfait" className="lp-hero-main-img" />
+        </div>
+      </section>
 
-      <div className="guest-gallery">
-        <div className="section-title">人気のスイーツ</div>
-        <div className="category-tabs">
-          {categories.map((cat) => (
-            <span key={cat.id} className="category-tab">{cat.name}</span>
+      {/* Sweets Showcase - horizontal scroll */}
+      <section className="lp-showcase">
+        <h2 className="lp-section-title">
+          <span className="lp-section-title-deco">Our Sweets</span>
+        </h2>
+        <div className="lp-showcase-scroll">
+          {showcaseSweets.map((s, i) => (
+            <div key={i} className="lp-showcase-item">
+              <div className="lp-showcase-img-wrap">
+                <img src={s.src} alt={s.name} />
+              </div>
+              <span className="lp-showcase-name">{s.name}</span>
+            </div>
           ))}
         </div>
-        <div className="items-grid">
-          {items.slice(0, 6).map((item) => (
-            <div key={item.id} className="item-card">
-              <div className="item-image">🍰</div>
-              <div className="item-info">
-                <div className="item-name">{item.name}</div>
-                <div className="item-price">¥{item.price.toLocaleString()}</div>
+      </section>
+
+      {/* Features */}
+      <section className="lp-features">
+        <h2 className="lp-section-title">
+          <span className="lp-section-title-deco">Features</span>
+        </h2>
+        <div className="lp-features-list">
+          {features.map((f, i) => (
+            <div key={i} className="lp-feature-card">
+              <div className="lp-feature-icon">
+                <img src={f.icon} alt={f.title} />
+              </div>
+              <div className="lp-feature-text">
+                <div className="lp-feature-title">{f.title}</div>
+                <div className="lp-feature-desc">{f.desc}</div>
               </div>
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
-      <div className="guest-login">
-        <div className="guest-login-text">
-          LINEでログインしてポイントを貯めよう！
+      {/* CTA */}
+      <section className="lp-cta">
+        <img src="/sweets/dango.png" alt="" className="lp-cta-deco lp-cta-deco-left" />
+        <img src="/sweets/taiyaki.png" alt="" className="lp-cta-deco lp-cta-deco-right" />
+        <div className="lp-cta-inner">
+          <p className="lp-cta-text">
+            LINEでログインして<br />ポイントを貯めよう!
+          </p>
+          <button onClick={login} className="lp-cta-btn">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style={{ marginRight: 8 }}>
+              <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+            </svg>
+            LINEでログイン
+          </button>
         </div>
-        <button onClick={login} className="btn btn-line">
-          LINEでログイン
-        </button>
-      </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="lp-footer">
+        <div className="lp-footer-sweets">
+          <img src="/sweets/mochi.png" alt="" />
+          <img src="/sweets/flan.png" alt="" />
+          <img src="/sweets/choux-cream.png" alt="" />
+        </div>
+        <p className="lp-footer-text">Sweets Shop</p>
+      </footer>
     </div>
   );
 }
