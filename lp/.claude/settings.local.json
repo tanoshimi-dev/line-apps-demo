@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx vite build:*)",
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:tanoshimi.dev)",
+      "WebFetch(domain:qr-official.line.me)"
+    ]
+  }
+}
