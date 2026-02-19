@@ -8,9 +8,9 @@ export const siteContent = {
   },
   hero: {
     badge: 'LINE公式アカウント連携',
-    headline: 'LINEアプリ開発で\nビジネスを加速する',
+    headline: 'はんなりdev\nLINEアプリ開発で\nビジネスを加速する',
     subtitle:
-      '会員管理・予約システム・ECなど、LINE上で動くミニアプリを開発。\nお客様との接点を最大化し、業務効率を飛躍的に向上させます。',
+      'はんなりdevは、会員管理・予約システム・ECなど、LINE上で動くミニアプリを開発。\nお客様との接点を最大化し、業務効率を飛躍的に向上させます。',
     ctaPrimary: 'お問い合わせ',
     ctaSecondary: 'デモを見る',
   },

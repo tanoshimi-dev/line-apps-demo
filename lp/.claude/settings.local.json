@@ -7,7 +7,10 @@
       "Bash(npx vite build:*)",
       "Bash(npm run dev:*)",
       "WebFetch(domain:tanoshimi.dev)",
-      "WebFetch(domain:qr-official.line.me)"
+      "WebFetch(domain:qr-official.line.me)",
+      "WebSearch",
+      "WebFetch(domain:line.omise.app)",
+      "Bash(npm run build:*)"
     ]
   }
 }
