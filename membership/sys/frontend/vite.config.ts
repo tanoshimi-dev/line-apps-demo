@@ -3,10 +3,10 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 import fs from 'fs'
 
-const httpsConfig = fs.existsSync('./localhost+1-key.pem')
+const httpsConfig = fs.existsSync('./localhost+2-key.pem')
   ? {
-      key: fs.readFileSync('./localhost+1-key.pem'),
-      cert: fs.readFileSync('./localhost+1.pem'),
+      key: fs.readFileSync('./localhost+2-key.pem'),
+      cert: fs.readFileSync('./localhost+2.pem'),
     }
   : undefined
 
